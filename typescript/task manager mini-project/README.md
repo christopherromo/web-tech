@@ -1,6 +1,7 @@
-# web-tech
+# Task Manager Mini-Project
 
 ##### Created by Christopher Romo
+##### Spring 2026
 
 ---
 
