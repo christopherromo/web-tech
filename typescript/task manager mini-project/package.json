@@ -2,11 +2,11 @@
   "name": "task-manager-mini-project",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
+  "main": "dist/task-manager.js",
   "scripts": {
-    "dev": "ts-node src/index.ts",
+    "dev": "ts-node src/task-manager.ts",
     "build": "tsc",
-    "start": "node dist/index.js",
+    "start": "node dist/task-manager.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
