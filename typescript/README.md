@@ -1,4 +1,4 @@
-# Task Manager Mini-Project
+# TypeScript Workspace
 
 ##### Created by Christopher Romo
 ##### Spring 2026
