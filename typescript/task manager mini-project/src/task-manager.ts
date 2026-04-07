@@ -21,14 +21,13 @@ type Task = {
 };
 
 let nextTaskId: number = 1;
-let tasks: Task[] = [];
+const tasks: Task[] = [];
 
 function addTask(task: Task): void {
   tasks.push(task);
 }
 
 function getTask(identifier: TaskIdentifier): Task | undefined {
-  // gets a task from the task manager via provided id or title
   if (typeof identifier === "number") {
     return tasks.find((task) => task.id === identifier);
   } else {
@@ -36,12 +35,7 @@ function getTask(identifier: TaskIdentifier): Task | undefined {
   }
 }
 
-function printTask(task: Task | undefined): void {
-  if (!task) {
-    console.error(`no such task.`);
-    return;
-  }
-
+function printTask(task: Task): void {
   if (task.description) {
     console.log(
       `[${task.id}] ${task.title} (${task.status}, ${task.priority} priority): ${task.description}`,
@@ -51,6 +45,16 @@ function printTask(task: Task | undefined): void {
       `[${task.id}] ${task.title} (${task.status}, ${task.priority} priority)`,
     );
   }
+}
+
+function printTaskByIdentifier(identifier: TaskIdentifier): void {
+  // prints a task if found, returns otherwise
+  const task = getTask(identifier);
+  if (!task) {
+    console.error(`${identifier} is not a valid task identifier.`);
+    return;
+  }
+  printTask(task);
 }
 
 function printTasks(listName: string, tasksToPrint: Task[]): void {
@@ -64,25 +68,29 @@ function printTasks(listName: string, tasksToPrint: Task[]): void {
   }
 }
 
-function updateTaskStatus(id: number, status: Status): void {
-  // finds task via provided id and updates its status
-  let task = getTask(id);
-  if (!task) {
-    console.error(`no such task.`);
-    return;
-  }
-
+function updateTaskStatus(status: Status, task: Task): void {
   task.status = status;
 }
 
+function updateTaskStatusByIdentifier(
+  status: Status,
+  identifier: TaskIdentifier,
+): void {
+  // updates a task if found, returns otherwise
+  const task = getTask(identifier);
+  if (!task) {
+    console.error(`${identifier} is not a valid task identifier.`);
+    return;
+  }
+  updateTaskStatus(status, task);
+}
+
 function filterTasks(status: Status): Task[] {
-  // filters the task manager via provided status
   return tasks.filter((task) => task.status === status);
 }
 
 function sortByPriority(tasksToSort: Task[]): Task[] {
-  // sorts incoming Task array based on priority
-  let sortedTasks: Task[] = [...tasksToSort].sort((a, b) => {
+  const sortedTasks: Task[] = [...tasksToSort].sort((a, b) => {
     if (a.priority === b.priority) {
       return 0;
     } else if (a.priority === "high") {
@@ -135,31 +143,32 @@ function main(): void {
   });
 
   console.log("// print some individual tasks");
-  printTask(getTask("learn guitar"));
-  printTask(getTask(2));
+  printTaskByIdentifier("learn guitar");
+  printTaskByIdentifier(2);
 
   console.log("\n// test tasks not in task manager");
-  printTask(getTask("stress out"));
-  printTask(getTask(6));
+  printTaskByIdentifier("stress out");
+  printTaskByIdentifier(6);
 
   console.log("\n// print all tasks in task manager");
   printTasks("task manager", tasks);
 
-  console.log("\n// test empty task array");
-  let emptyTasks: Task[] = [];
-  printTasks("test task manager", emptyTasks);
+  console.log("\n// test empty task manager");
+  const emptyTasks: Task[] = [];
+  printTasks("empty task manager", emptyTasks);
 
   console.log("\n// update a tasks status");
-  updateTaskStatus(5, "done");
-  printTask(getTask(5));
+  updateTaskStatusByIdentifier("done", 5);
+  printTaskByIdentifier(5);
 
-  console.log("\n// get all todo tasks");
-  let todoTasks: Task[] = filterTasks("todo");
-  printTasks("todo tasks", todoTasks);
+  console.log("\n// get all done tasks");
+  const doneTasks: Task[] = filterTasks("done");
+  printTasks("done tasks", doneTasks);
 
   console.log("\n// sort by priority");
-  let sortedTasks: Task[] = sortByPriority(tasks);
+  const sortedTasks: Task[] = sortByPriority(tasks);
   printTasks("sorted tasks", sortedTasks);
+  console.log("\n");
 } // main
 
 main();
