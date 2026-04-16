@@ -1,0 +1,74 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <!-- christopher romo, theme switcher-->
+    <title>theme switcher</title>
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="main-card">
+        <div class="container">
+          <h1>welcome to theme switcher</h1>
+          <p>select a theme from the dropdown menu</p>
+        </div>
+        <div class="container">
+          <div class="dropdown">
+            <button
+              class="btn btn-primary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              theme
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  onclick="
+                    changeTheme('light');
+                    return false;
+                  "
+                  >light</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  onclick="
+                    changeTheme('dark');
+                    return false;
+                  "
+                  >dark</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  onclick="
+                    changeTheme('tropical');
+                    return false;
+                  "
+                  >tropical</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="logic.js"></script>
+  </body>
+</html>

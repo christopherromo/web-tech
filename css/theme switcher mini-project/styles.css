@@ -1,0 +1,61 @@
+/* variable declarations */
+
+:root {
+  --bg-color: white;
+  --card-color: rgb(215, 215, 215);
+  --primary-color: #4f46e5;
+  --text-color: black;
+}
+
+.dark {
+  --bg-color: black;
+  --card-color: rgb(35, 35, 35);
+  --primary-color: lime;
+  --text-color: white;
+}
+
+.tropical {
+  --bg-color: cyan;
+  --card-color: rgb(0, 215, 215);
+  --primary-color: magenta;
+  --text-color: yellow;
+}
+
+/* styles */
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--primary-color);
+  --bs-btn-border-color: var(--primary-color);
+  --bs-btn-hover-bg: var(--primary-color);
+  --bs-btn-hover-border-color: var(--primary-color);
+  --bs-btn-active-bg: var(--primary-color);
+  --bs-btn-active-border-color: var(--primary-color);
+  --bs-btn-disabled-bg: var(--primary-color);
+  --bs-btn-disabled-border-color: var(--primary-color);
+  --bs-btn-color: #fff;
+}
+
+.container {
+  margin-bottom: 50px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.main-card {
+  background-color: var(--card-color);
+  border-radius: 20px;
+  display: inline-block;
+  padding: 15px 30px;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
