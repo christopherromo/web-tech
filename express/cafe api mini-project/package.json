@@ -1,0 +1,17 @@
+{
+  "name": "cafe-api-mini-project",
+  "version": "1.0.0",
+  "description": "a simple cafe api.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "christopher romo",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
