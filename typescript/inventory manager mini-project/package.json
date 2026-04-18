@@ -1,7 +1,7 @@
 {
   "name": "inventory-manager-mini-project",
   "version": "1.0.0",
-  "description": "",
+  "description": "a simple inventory manager.",
   "main": "index.js",
   "scripts": {
     "dev": "ts-node src/inventory-manager.ts",
@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "christopher romo",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {

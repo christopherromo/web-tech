@@ -35,7 +35,7 @@ type Grocery = BaseItem & {
 
 type InventoryItem = Electronics | Clothing | Grocery;
 
-let inventory: InventoryItem[] = [];
+const inventory: InventoryItem[] = [];
 let nextId: number = 1;
 
 // T is a generic that can only be of type InventoryItem
@@ -110,7 +110,7 @@ function updateItem<C extends Category>(
    * partial: makes all remaining properties optional.
    */
   //
-  let item = getItem(id);
+  const item = getItem(id);
   if (!item) {
     console.error(`${id} is not a valid item id.`);
     return;
@@ -136,7 +136,7 @@ function findItems<T extends InventoryItem>(
   predicate: (item: T) => boolean,
 ): T[] {
   // predicate is a function that returns a boolean
-  let foundItems: T[] = [];
+  const foundItems: T[] = [];
   for (const item of items) {
     if (predicate(item)) {
       foundItems.push(item);
