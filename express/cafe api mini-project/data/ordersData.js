@@ -1,5 +1,5 @@
 /**
- * cafeOrders.js
+ * ordersData.js
  *
  * contains the data for the cafe api related to orders.
  *

@@ -1,5 +1,5 @@
 /**
- * ordersController.js
+ * ordersControllers.js
  *
  * handles the logic for incoming requests to the cafe api related to orders.
  *
@@ -7,7 +7,7 @@
  * created: 2026-04-17
  */
 
-import { cafeOrders } from "../data/cafeOrders.js";
+import { cafeOrders } from "../data/ordersData.js";
 
 let nextId = Math.max(...cafeOrders.map((order) => order.id));
 

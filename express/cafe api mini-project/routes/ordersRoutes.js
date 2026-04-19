@@ -15,7 +15,7 @@ import {
   postOrder,
   updateOrder,
   deleteOrder,
-} from "../controllers/ordersController.js";
+} from "../controllers/ordersControllers.js";
 
 export const ordersRouter = express.Router();
 
