@@ -15,16 +15,78 @@
     />
 
     <!-- styles -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <link href="./styles/styles.css" rel="stylesheet" />
   </head>
   <body>
     <h1 class="container">welcome to the café!</h1>
-    <div class="container">
-      <div class="backdrop">
+    <div class="container main-container">
+      <!-- new order block -->
+
+      <div class="new-order-backdrop">
+        <h2>add a new order</h2>
+        <p>please fill out all fields.</p>
+        <form class="new-order-form" id="new-order-form">
+          <div class="mb-3">
+            <label for="customer-name-input-field" class="form-label"
+              >customer name</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="customer-name-input-field"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="drink-name-input-field" class="form-label"
+              >drink name</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="drink-name-input-field"
+            />
+          </div>
+          <input
+            type="radio"
+            class="btn-check"
+            name="size-radio-buttons"
+            id="small-radio-button"
+            value="small"
+            checked
+          />
+          <label class="btn" for="small-radio-button">small</label>
+          <input
+            type="radio"
+            class="btn-check"
+            name="size-radio-buttons"
+            id="medium-radio-button"
+            value="medium"
+          />
+          <label class="btn" for="medium-radio-button">medium</label>
+          <input
+            type="radio"
+            class="btn-check"
+            name="size-radio-buttons"
+            id="large-radio-button"
+            value="large"
+          />
+          <label class="btn" for="large-radio-button">large</label>
+          <br />
+          <button type="submit" class="btn new-order-button">add</button>
+        </form>
+      </div>
+      <!-- all orders block -->
+
+      <div class="all-orders-backdrop">
         <h2>all current orders</h2>
-        <div id="orders-list"></div>
+        <div id="all-orders-list"></div>
       </div>
     </div>
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./js/index.js"></script>
 </html>

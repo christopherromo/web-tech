@@ -58,7 +58,7 @@ export const getOrderById = (req, res) => {
 
   // respond with appropriate message
   if (!order) {
-    return res.status(404).json({ message: "invalid order id." });
+    return res.status(404).json({ error: "invalid order id." });
   } else {
     return res.json(order);
   }
@@ -71,7 +71,7 @@ export const postOrder = (req, res) => {
   // respond with appropriate message
   if (!drink || !size || !customerName || !status) {
     return res.status(400).json({
-      message:
+      error:
         "all properties needed to post order: drink, size, customerName, status",
     });
   } else {
@@ -97,7 +97,7 @@ export const updateOrder = (req, res) => {
 
   // respond with appropriate message
   if (!order) {
-    return res.status(404).json({ message: "invalid order id." });
+    return res.status(404).json({ error: "invalid order id." });
   } else {
     if (drink !== undefined) order.drink = drink;
     if (size !== undefined) order.size = size;
@@ -116,7 +116,7 @@ export const deleteOrder = (req, res) => {
 
   // respond with appropriate message
   if (orderIndex === -1) {
-    return res.status(404).json({ message: "invalid order id." });
+    return res.status(404).json({ error: "invalid order id." });
   } else {
     cafeOrders.splice(orderIndex, 1);
     return res.status(200).json({ message: "order deleted." });

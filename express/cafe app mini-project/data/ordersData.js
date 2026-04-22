@@ -34,14 +34,14 @@ export const cafeOrders = [
     drink: "iced chai latte",
     size: "medium",
     customerName: "august",
-    status: "completed",
+    status: "complete",
   },
   {
     id: 5,
     drink: "vanilla frappe",
     size: "large",
     customerName: "liam",
-    status: "completed",
+    status: "complete",
   },
   {
     id: 6,
@@ -62,7 +62,7 @@ export const cafeOrders = [
     drink: "hot chocolate",
     size: "small",
     customerName: "cindy",
-    status: "completed",
+    status: "complete",
   },
   {
     id: 9,

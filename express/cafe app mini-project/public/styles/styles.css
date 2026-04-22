@@ -1,4 +1,13 @@
+/* declarations */
+
+:root {
+  --espresso: rgb(70, 35, 0);
+  --light-grey: rgb(245, 245, 245);
+}
+
 /* styles */
+
+/* general styles */
 
 body {
   background-color: bisque;
@@ -6,14 +15,11 @@ body {
 }
 
 h1 {
-  color: rgb(70, 35, 0);
+  color: var(--espresso);
 }
 
-.backdrop {
-  background-color: white;
-  border-radius: 15px;
-  display: inline-block;
-  width: 60%;
+h2 {
+  margin: 20px;
 }
 
 .container {
@@ -22,10 +28,86 @@ h1 {
   text-align: center;
 }
 
-.order-item {
-  background-color: rgb(244, 244, 244);
+.main-container {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* new order block */
+
+.new-order-button {
+  background-color: var(--espresso);
+  color: white;
+  display: block;
+  margin-bottom: 5px;
+  margin-left: auto;
+  margin-top: 5px;
+}
+
+.new-order-form {
+  padding: 30px;
+  text-align: left;
+}
+
+.new-order-backdrop {
+  background-color: white;
   border-radius: 15px;
-  display: inline-block;
-  margin-bottom: 10px;
+  height: fit-content;
+  width: 100%;
+}
+
+.new-order-backdrop p {
+  margin: 0px 0;
+}
+
+/* all orders block */
+
+.all-orders-backdrop {
+  background-color: white;
+  border-radius: 15px;
+  padding-bottom: 35px;
+  width: 100%;
+}
+
+#all-orders-list {
+  height: 500px;
+  overflow: auto;
+}
+
+/* order item */
+
+.order-button {
+  background-color: var(--espresso);
+  color: white;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.order-buttons {
+  text-align: right;
+}
+
+.order-image {
+  text-align: center;
+}
+
+.order-info {
+  text-align: center;
+}
+
+.order-item {
+  align-items: center;
+  background-color: var(--light-grey);
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: 80px 1fr 120px;
+  margin: 0 auto 10px;
+  padding: 15px 20px;
   width: 90%;
+}
+
+.order-item p {
+  margin: 7px 0;
 }
