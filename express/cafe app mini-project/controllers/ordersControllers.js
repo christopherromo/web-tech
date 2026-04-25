@@ -67,12 +67,17 @@ export const getOrderById = (req, res) => {
 export const postOrder = (req, res) => {
   // destructure the request body
   const { drink, size, customerName, status } = req.body || {};
+  const validStatuses = ["pending", "ready", "complete"];
 
   // respond with appropriate message
   if (!drink || !size || !customerName || !status) {
     return res.status(400).json({
       error:
         "all properties needed to post order: drink, size, customerName, status",
+    });
+  } else if (!validStatuses.includes(status)) {
+    return res.status(400).json({
+      error: "status must be one of the following: pending, ready, complete",
     });
   } else {
     const newOrder = {
@@ -91,6 +96,7 @@ export const postOrder = (req, res) => {
 export const updateOrder = (req, res) => {
   // destructure the request body
   const { drink, size, customerName, status } = req.body || {};
+  const validStatuses = ["pending", "ready", "complete"];
 
   // find the order using id parameter
   const order = cafeOrders.find((order) => order.id === Number(req.params.id));
@@ -98,6 +104,10 @@ export const updateOrder = (req, res) => {
   // respond with appropriate message
   if (!order) {
     return res.status(404).json({ error: "invalid order id." });
+  } else if (status !== undefined && !validStatuses.includes(status)) {
+    return res.status(400).json({
+      error: "status must be one of the following: pending, ready, complete",
+    });
   } else {
     if (drink !== undefined) order.drink = drink;
     if (size !== undefined) order.size = size;

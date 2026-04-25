@@ -36,6 +36,13 @@ h2 {
 
 /* new order block */
 
+.new-order-backdrop {
+  background-color: white;
+  border-radius: 15px;
+  height: fit-content;
+  width: 100%;
+}
+
 .new-order-button {
   background-color: var(--espresso);
   color: white;
@@ -48,13 +55,6 @@ h2 {
 .new-order-form {
   padding: 30px;
   text-align: left;
-}
-
-.new-order-backdrop {
-  background-color: white;
-  border-radius: 15px;
-  height: fit-content;
-  width: 100%;
 }
 
 .new-order-backdrop p {
@@ -71,11 +71,22 @@ h2 {
 }
 
 #all-orders-list {
-  height: 500px;
-  overflow: auto;
+  height: auto;
+  max-height: 500px;
+  overflow-y: auto;
 }
 
 /* order item */
+
+.dropdown-item {
+  color: var(--espresso);
+}
+
+.dropdown-item:focus,
+.dropdown-item:active {
+  background-color: var(--espresso);
+  color: white;
+}
 
 .order-button {
   background-color: var(--espresso);

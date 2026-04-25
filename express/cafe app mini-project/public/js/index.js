@@ -8,13 +8,14 @@
  */
 
 function sortOrders(orders) {
+  // sorts the orders based on status then customer name.
+
   const statusOrder = {
     pending: 0,
     ready: 1,
     complete: 2,
   };
 
-  // sort by status, then by customer name
   orders.sort((a, b) => {
     const statusDifference = statusOrder[a.status] - statusOrder[b.status];
 
@@ -132,104 +133,133 @@ function createOrderItem(order) {
   // append all three divs and return the order item
   orderItem.append(orderImage, orderInfo, orderButtons);
   return orderItem;
-}
+} // createOrderItem
 
 async function fillList() {
   // fills the all orders list.
 
-  // make api request
-  const res = await fetch("/orders");
-  const orders = await res.json();
-
   const allOrdersList = document.getElementById("all-orders-list");
   allOrdersList.innerHTML = "";
 
-  // display a message if the list is empty
-  if (orders.length === 0) {
+  try {
+    // make api request
+    const res = await fetch("/orders");
+    if (!res.ok) throw new Error("failed to load orders.");
+
+    const orders = await res.json();
+
+    // display a message if the list is empty
+    if (orders.length === 0) {
+      const message = document.createElement("p");
+      message.textContent = "no orders yet...";
+      allOrdersList.append(message);
+      return;
+    }
+
+    // sort the orders
+    sortOrders(orders);
+
+    // create order items
+    orders.forEach((order) => {
+      const orderItem = createOrderItem(order);
+      allOrdersList.append(orderItem);
+    });
+  } catch {
     const message = document.createElement("p");
-    message.textContent = "no orders yet...";
+    message.textContent =
+      "could not load orders. please check your connection and try again.";
     allOrdersList.append(message);
-    return;
   }
-
-  // sort the orders
-  sortOrders(orders);
-
-  // create order items
-  orders.forEach((order) => {
-    const orderItem = createOrderItem(order);
-    allOrdersList.append(orderItem);
-  });
 }
 
 async function addOrder(newOrderForm) {
   // adds an order to the cafe api.
 
-  const drink = document.getElementById("drink-name-input-field");
-  const size = document.querySelector(
-    'input[name="size-radio-buttons"]:checked',
-  ).value;
-  const customerName = document.getElementById("customer-name-input-field");
-  const status = "pending";
+  try {
+    const drink = document.getElementById("drink-name-input-field");
+    const size = document.querySelector(
+      'input[name="size-radio-buttons"]:checked',
+    ).value;
+    const customerName = document.getElementById("customer-name-input-field");
+    const status = "pending";
 
-  // make api request
-  const res = await fetch("/orders", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      drink: drink.value,
-      size: size,
-      customerName: customerName.value,
-      status: status,
-    }),
-  });
+    // make api request
+    const res = await fetch("/orders", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        drink: drink.value,
+        size: size,
+        customerName: customerName.value,
+        status: status,
+      }),
+    });
 
-  // respond with appropriate message
-  if (res.ok) {
-    alert("order added!");
-    newOrderForm.reset();
-    await fillList();
-  } else {
-    const error = await res.json();
-    alert(error.error);
+    // respond with appropriate message
+    if (res.ok) {
+      alert("order added!");
+      newOrderForm.reset();
+      await fillList();
+    } else {
+      const error = await res.json();
+      alert(error.error);
+    }
+  } catch {
+    alert("network error. please check your connection and try again.");
   }
 }
 
 async function editOrder(id, updatedOrder) {
   // edits an order in the cafe api.
 
-  // make api request
-  const res = await fetch(`/orders/${id}`, {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(updatedOrder),
-  });
+  try {
+    const { drink, size, customerName, status } = updatedOrder;
 
-  // respond with appropriate message
-  if (res.ok) {
-    alert("order updated!");
-    await fillList();
-  } else {
-    const error = await res.json();
-    alert(error.error);
+    const order = {};
+    if (drink !== undefined) order.drink = drink;
+    if (size !== undefined) order.size = size;
+    if (customerName !== undefined) order.customerName = customerName;
+    if (status !== undefined) order.status = status;
+
+    // make api request
+    const res = await fetch(`/orders/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(order),
+    });
+
+    // respond with appropriate message
+    if (res.ok) {
+      alert("order updated!");
+      await fillList();
+    } else {
+      const error = await res.json();
+      alert(error.error);
+    }
+  } catch {
+    alert("network error. please check your connection and try again.");
   }
 }
 
 async function removeOrder(id) {
   // removes an order from the cafe api.
 
-  // make api request
-  const res = await fetch(`/orders/${id}`, {
-    method: "DELETE",
-  });
+  try {
+    // make api request
+    const res = await fetch(`/orders/${id}`, {
+      method: "DELETE",
+    });
 
-  // respond with appropriate message
-  if (res.ok) {
-    alert("order removed!");
-    await fillList();
-  } else {
-    const error = await res.json();
-    alert(error.error);
+    // respond with appropriate message
+    if (res.ok) {
+      alert("order removed!");
+      await fillList();
+    } else {
+      const error = await res.json();
+      alert(error.error);
+    }
+  } catch {
+    alert("network error. please check your connection and try again.");
   }
 }
 
