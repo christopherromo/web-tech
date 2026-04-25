@@ -23,7 +23,7 @@ app.use("/orders", ordersRouter);
 app.use((req, res) => {
   res.status(404).json({
     message:
-      "endpoint not found. avaliable endpoints: GET /orders, GET /orders/:id, POST /orders, PUT /orders/:id, DELETE /orders/:id",
+      "endpoint not found. available endpoints: GET /orders, GET /orders/:id, POST /orders, PUT /orders/:id, DELETE /orders/:id",
   });
 });
 
