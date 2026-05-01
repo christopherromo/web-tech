@@ -1,7 +1,7 @@
 /**
- * logic.js
+ * index.js
  *
- * handles theme switcher logic.
+ * handles logic for index.html.
  *
  * author: christopher romo
  * created: 2026-04-15
