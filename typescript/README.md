@@ -13,7 +13,7 @@ These are mini-projects created to help me learn TypeScript.
 
    - **Basic Types:** Types like *number* and *string*, showcased with variables like *id* and *title*, respectively.
 
-   - **Literal Types:** Types restricted to specific values, such as certain *number* or *string* values. Showcased with types like *Priority* and *Status*.
+   - **Literal Types:** Types restricted to specific values, such as certain *number* or *string* values. Showcased with *Priority* and *Status*.
 
    - **Custom Types:** A shape for data, as it defines properties an object must have to be considered that type. Showcased with the *Task* type, with properties like *id: number*, *title: string*, etc.
 
@@ -45,7 +45,7 @@ These are mini-projects created to help me learn TypeScript.
 
    - **Type Narrowing:** The process of finding a variable's type. This can be seen with the *getItem* function, where the incoming *ItemIdentifier*'s specific type is found before the logic.
 
-   - **Extract Utility Type:** Finds members of a union that match a certain criterion. For example, the *updateItem* function expects a category argument, which it uses with the extract utility type to extract members of the InventoryItem union whose categories match the argument.
+   - **Extract Utility Type:** Finds members of a union that match a certain criterion. For example, the *updateItem* function expects a category argument, which it uses with the extract utility type to extract members of the InventoryItem union whose categories match.
 
    - **Omit Utility Type:** Ensures certain properties of a type are left out. For example, the *updateItem* function finds the expected type of the incoming object through use of the extract utility type. That type is then used with the omit utility type to ensure the *id* and *category* properties are absent from the incoming object.
 
