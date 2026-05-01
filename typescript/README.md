@@ -1,10 +1,5 @@
 # TypeScript Workspace
 
-##### Created by Christopher Romo
-##### Spring 2026
-
----
-
 These are mini-projects created to help me learn TypeScript.
 
 ## Task Manager Mini-Project
@@ -52,7 +47,6 @@ These are mini-projects created to help me learn TypeScript.
    - **Partial Utility Type:** Allows all properties to be optional. For example, after *id* and *category* properties are ensured absent, the rest of the remaining properties are made optional.
 
    - **Generics:** Allow functions to work with flexible, reusable types while keeping type safety. For example, the *addItem* and *findItems* functions use generics with *InventoryItem* types.
-
 
 ### Running the Project 🎬
 
