@@ -1,0 +1,19 @@
+{
+  "name": "pokemon-api-mini-project",
+  "version": "1.0.0",
+  "description": "a simple pokemon api showcasing better-sqlite3.",
+  "main": "index.js",
+  "scripts": {
+    "db:init": "node src/db/schema.js && node src/db/seed.js",
+    "start": "node src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "christopher romo",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "better-sqlite3": "^12.10.0",
+    "express": "^5.2.1"
+  }
+}
