@@ -12,5 +12,8 @@ This is a collection of mini-projects made to help me understand various web tec
    - TypeScript
    - HTML
    - CSS
+   - SQL
+   - Node.js
    - Express
    - Bootstrap
+   - SQLite
