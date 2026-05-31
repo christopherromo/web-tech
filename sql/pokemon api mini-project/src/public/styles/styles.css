@@ -1,0 +1,26 @@
+/* variable declarations */
+
+:root {
+  --instinct-yellow: rgb(255, 222, 0);
+  --mystic-blue: rgb(59, 76, 202);
+  --valor-red: rgb(255, 0, 0);
+}
+
+/* styles */
+
+h1 {
+  color: var(--mystic-blue);
+  font-family: "Jersey 10", sans-serif;
+  margin: 20px 0;
+}
+
+.icon {
+  image-rendering: pixelated;
+}
+
+.main-container {
+  font-family: "Stack Sans Headline", sans-serif;
+  margin-bottom: 50px;
+  margin-top: 30px;
+  text-align: center;
+}

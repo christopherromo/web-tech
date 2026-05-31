@@ -1,0 +1,15 @@
+/* remove styles */
+
+.remove-backdrop {
+  background-color: var(--valor-red);
+  border-radius: 15px;
+  color: white;
+  margin: 0 auto;
+  padding: 20px 30px;
+  text-align: left;
+  width: 80%;
+}
+
+.remove-button {
+  background-color: var(--instinct-yellow);
+}

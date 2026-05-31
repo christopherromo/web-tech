@@ -2,7 +2,7 @@
   "name": "pokemon-api-mini-project",
   "version": "1.0.0",
   "description": "a simple pokemon api showcasing better-sqlite3.",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
     "db:init": "node src/db/schema.js && node src/db/seed.js",
     "start": "node src/server.js",

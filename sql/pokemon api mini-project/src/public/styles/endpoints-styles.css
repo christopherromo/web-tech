@@ -1,0 +1,42 @@
+/* endpoints styles */
+
+a:active {
+  color: white;
+}
+
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: white;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 90px 0;
+}
+
+.endpoints-backdrop {
+  background-color: var(--mystic-blue);
+  border-radius: 15px;
+  color: white;
+  margin: 0 auto;
+  padding: 10px;
+  width: 80%;
+}
+
+.endpoints-backdrop a,
+.endpoints-backdrop p {
+  display: block;
+  margin: 0.7em 0;
+}
+
+.endpoints-table {
+  margin: 0 auto;
+  text-align: left;
+}
+
+.info {
+  color: var(--instinct-yellow);
+}

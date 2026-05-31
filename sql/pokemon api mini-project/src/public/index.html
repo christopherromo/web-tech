@@ -5,13 +5,363 @@
     <!-- christopher romo, pokemon api-->
     <title>pokemon api</title>
     <meta charset="UTF-8" />
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Stack+Sans+Headline:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- styles -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="./styles/styles.css" rel="stylesheet" />
+    <link href="./styles/add-styles.css" rel="stylesheet" />
+    <link href="./styles/endpoints-styles.css" rel="stylesheet" />
+    <link href="./styles/remove-styles.css" rel="stylesheet" />
+    <link href="./styles/update-styles.css" rel="stylesheet" />
+
+    <!-- javascript -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <script src="./js/index.js" defer></script>
   </head>
 
   <body>
-    <p>available endpoints</p>
-    <p>/pokemon - all pokemon</p>
-    <p>/pokemon/:id - one pokemon, specified id</p>
-    <p>/pokemon/essential - all pokemon, name and type only</p>
-    <p>/pokemon/essential/:id - one pokemon, name and type only, specified id</p>
+    <div class="main-container">
+      <!-- endpoints -->
+      <h1>
+        available endpoints for the pokemon api
+        <img
+          src="./images/pokeball-icon.png"
+          alt="pokeball icon"
+          class="icon"
+        />
+      </h1>
+      <div class="endpoints-backdrop">
+        <table class="endpoints-table">
+          <tr>
+            <td><a href="/pokemon">/pokemon</a></td>
+            <td><p>all pokemon in pokedex</p></td>
+          </tr>
+          <tr>
+            <td><p class="info">&#8627; optional queries:</p></td>
+            <td><p class="info">minHp, exclude, excludeType, types</p></td>
+          </tr>
+          <tr>
+            <td><a href="/pokemon/1">/pokemon/:id</a></td>
+            <td><p>a single pokemon specified by id</p></td>
+          </tr>
+          <tr>
+            <td><a href="/pokemon/essential">/pokemon/essential</a></td>
+            <td><p>all pokemon in pokedex, name and type only</p></td>
+          </tr>
+          <tr>
+            <td><a href="/pokemon/essential/1">/pokemon/essential/:id</a></td>
+            <td><p>a single pokemon specified by id, name and type only</p></td>
+          </tr>
+          <tr>
+            <td><a href="/pokemon/non-mythical">/pokemon/non-mythical</a></td>
+            <td><p>all pokemon in pokedex that are not mythical</p></td>
+          </tr>
+          <tr>
+            <td><p class="info">&#8627; optional query:</p></td>
+            <td><p class="info">minLevel</p></td>
+          </tr>
+          <tr>
+            <td><a href="/pokemon/search?name=z">/pokemon/search</a></td>
+            <td><p>all pokemon in pokedex that match the query</p></td>
+          </tr>
+          <tr>
+            <td><p class="info">&#8627; required query:</p></td>
+            <td><p class="info">name</p></td>
+          </tr>
+          <tr>
+            <td>
+              <a href="/pokemon/fire-or-electric">/pokemon/fire-or-electric</a>
+            </td>
+            <td><p>all pokemon in pokedex with a fire or electric type</p></td>
+          </tr>
+          <tr>
+            <td>
+              <a href="/pokemon/level-range?minLevel=1&maxLevel=10"
+                >/pokemon/level-range</a
+              >
+            </td>
+            <td>
+              <p>all pokemon in pokedex within a specified level range</p>
+            </td>
+          </tr>
+          <tr>
+            <td><p class="info">&#8627; required queries:</p></td>
+            <td><p class="info">minLevel, maxLevel</p></td>
+          </tr>
+          <tr>
+            <td><a href="/pokemon/sort?sortBy=hp">/pokemon/sort</a></td>
+            <td>
+              <p>all pokemon in pokedex sorted by hp, attack, or level</p>
+            </td>
+          </tr>
+          <tr>
+            <td><p class="info">&#8627; required query:</p></td>
+            <td><p class="info">sortBy</p></td>
+          </tr>
+          <tr>
+            <td><a href="/pokemon/leaderboard">/pokemon/leaderboard</a></td>
+            <td><p>top 5 pokemon in pokedex based on level</p></td>
+          </tr>
+          <tr>
+            <td><a href="/pokemon/count">/pokemon/count</a></td>
+            <td><p>a count of all pokemon in pokedex</p></td>
+          </tr>
+          <tr>
+            <td><a href="/pokemon/stats">/pokemon/stats</a></td>
+            <td><p>a collection of stats about the pokemon in pokedex</p></td>
+          </tr>
+          <tr>
+            <td><a href="/pokemon/types">/pokemon/types</a></td>
+            <td><p>a count of all pokemon in all given types</p></td>
+          </tr>
+          <tr>
+            <td><p class="info">&#8627; optional query:</p></td>
+            <td><p class="info">populous</p></td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- add -->
+      <h1>
+        add a pokemon to the api
+        <img
+          alt="pokeball icon"
+          class="icon"
+          src="./images/pokeball-icon.png"
+        />
+      </h1>
+      <form class="add-backdrop" id="add-form">
+        <p>enter all of the following fields:</p>
+        <div class="mb-3">
+          <label class="form-label" for="add-pokedex-number-input-field"
+            >pokedex number</label
+          >
+          <input
+            class="form-control"
+            id="add-pokedex-number-input-field"
+            max="1028"
+            min="1"
+            placeholder="1"
+            required
+            type="number"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="add-name-input-field"
+            >pokemon name</label
+          >
+          <input
+            class="form-control"
+            id="add-name-input-field"
+            placeholder="bulbasaur"
+            required
+            type="text"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="add-type-input-field"
+            >pokemon type</label
+          >
+          <input
+            class="form-control"
+            id="add-type-input-field"
+            placeholder="grass, poison"
+            required
+            type="text"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="add-region-input-field"
+            >pokemon region</label
+          >
+          <input
+            class="form-control"
+            id="add-region-input-field"
+            placeholder="kanto"
+            required
+            type="text"
+          />
+        </div>
+        <div class="add-components">
+          <div class="mb-3">
+            <label class="form-label" for="add-hp-input-field"
+              >pokemon hp</label
+            >
+            <input
+              class="form-control"
+              id="add-hp-input-field"
+              max="714"
+              min="1"
+              placeholder="45"
+              required
+              type="number"
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="add-attack-input-field"
+              >pokemon attack</label
+            >
+            <input
+              class="form-control"
+              id="add-attack-input-field"
+              max="504"
+              min="4"
+              placeholder="49"
+              required
+              type="number"
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="add-defense-input-field"
+              >pokemon defense</label
+            >
+            <input
+              class="form-control"
+              id="add-defense-input-field"
+              max="614"
+              min="4"
+              placeholder="49"
+              required
+              type="number"
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="add-level-input-field"
+              >pokemon level</label
+            >
+            <input
+              class="form-control"
+              id="add-level-input-field"
+              max="100"
+              min="1"
+              placeholder="1"
+              required
+              type="number"
+            />
+          </div>
+        </div>
+        <div class="form-check add-check">
+          <input
+            class="form-check-input"
+            id="add-mythical-check"
+            type="checkbox"
+          />
+          <label class="form-check-label" for="add-mythical-check">
+            mythical
+          </label>
+        </div>
+        <button type="submit" class="btn add-button">add</button>
+      </form>
+
+      <!-- update -->
+      <h1>
+        update a pokemon in the api
+        <img
+          alt="pokeball icon"
+          class="icon"
+          src="./images/pokeball-icon.png"
+        />
+      </h1>
+      <form class="update-backdrop" id="update-form">
+        <p>enter the id of the pokemon you would like to update:</p>
+        <div class="mb-3">
+          <label class="form-label" for="update-id-input-field"
+            >pokemon id</label
+          >
+          <input
+            class="form-control"
+            id="update-id-input-field"
+            min="1"
+            placeholder="1"
+            required
+            type="number"
+          />
+        </div>
+        <div class="update-components">
+          <div class="mb-3">
+            <label class="form-label" for="update-hp-input-field"
+              >updated hp</label
+            >
+            <input
+              class="form-control"
+              id="update-hp-input-field"
+              max="714"
+              min="1"
+              placeholder="1"
+              required
+              type="number"
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="update-attack-input-field"
+              >updated attack</label
+            >
+            <input
+              class="form-control"
+              id="update-attack-input-field"
+              max="504"
+              min="4"
+              placeholder="4"
+              required
+              type="number"
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="update-level-input-field"
+              >updated level</label
+            >
+            <input
+              class="form-control"
+              id="update-level-input-field"
+              max="100"
+              min="1"
+              placeholder="1"
+              required
+              type="number"
+            />
+          </div>
+        </div>
+        <button class="btn update-button" type="submit">update</button>
+      </form>
+
+      <!-- remove -->
+      <h1>
+        remove a pokemon from the api
+        <img
+          alt="pokeball icon"
+          class="icon"
+          src="./images/pokeball-icon.png"
+        />
+      </h1>
+      <form class="remove-backdrop" id="remove-form">
+        <p>enter the id of the pokemon you would like to remove:</p>
+        <label class="form-label" for="remove-id-input-field">pokemon id</label>
+        <div class="input-group mb-3">
+          <input
+            class="form-control"
+            id="remove-id-input-field"
+            min="1"
+            placeholder="1"
+            required
+            type="number"
+          />
+          <button class="btn remove-button" type="submit">remove</button>
+        </div>
+      </form>
+    </div>
   </body>
 </html>

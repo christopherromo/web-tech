@@ -1,0 +1,30 @@
+/* add styles */
+
+.add-backdrop {
+  background-color: var(--mystic-blue);
+  border-radius: 15px;
+  color: white;
+  margin: 0 auto;
+  padding: 20px 30px;
+  text-align: left;
+  width: 80%;
+}
+
+.add-button {
+  background-color: var(--instinct-yellow);
+  display: block;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-top: 10px;
+}
+
+.add-check {
+  margin-top: 10px;
+}
+
+.add-components {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-top: 20px;
+}

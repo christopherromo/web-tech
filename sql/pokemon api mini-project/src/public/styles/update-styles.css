@@ -1,0 +1,26 @@
+/* update styles */
+
+.update-backdrop {
+  background-color: var(--instinct-yellow);
+  border-radius: 15px;
+  margin: 0 auto;
+  padding: 20px 30px;
+  text-align: left;
+  width: 80%;
+}
+
+.update-button {
+  background-color: var(--mystic-blue);
+  color: white;
+  display: block;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-top: 10px;
+}
+
+.update-components {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 20px;
+}
