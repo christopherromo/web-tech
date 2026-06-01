@@ -57,3 +57,9 @@ These are mini-projects created to help me learn Express.
     ```bash
     npm run start
     ```
+
+### Quick Look 📷
+
+<p align="center">
+  <img src="./resources/cafe-app-mini-project-quick-look.png" alt="cafe app mini-project quick look"/>
+</p>
