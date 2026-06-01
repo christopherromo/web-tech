@@ -34,3 +34,9 @@ These are mini-projects created to help me learn SQL.
     ```bash
     npm run start
     ```
+
+### Quick Look 📷
+
+<p align="center">
+  <img src="./resources/pokemon-api-mini-project-quick-look.png" alt="pokemon api mini-project quick look"/>
+</p>
