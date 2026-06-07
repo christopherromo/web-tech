@@ -9,6 +9,6 @@
 
 import express from "express";
 
-import * as controllers from "../controllers/teamsControllers.js";
+import * as teamsControllers from "../controllers/teamsControllers.js";
 
 export const teamsRouter = express.Router();

@@ -9,6 +9,6 @@
 
 import express from "express";
 
-import * as controllers from "../controllers/trainersControllers.js";
+import * as trainersControllers from "../controllers/trainersControllers.js";
 
 export const trainersRouter = express.Router();

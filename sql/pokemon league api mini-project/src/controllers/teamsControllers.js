@@ -7,4 +7,4 @@
  * created: 2026-06-03
  */
 
-import * as models from "../models/teamsModels.js";
+import * as teamsModels from "../models/teamsModels.js";

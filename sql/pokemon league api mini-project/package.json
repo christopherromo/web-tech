@@ -6,6 +6,7 @@
   "scripts": {
     "db:schema": "psql pokemon_league -f src/db/schema.sql",
     "db:seed": "psql pokemon_league -f src/db/seed.sql",
+    "db:init": "npm run db:schema && npm run db:seed",
     "dev": "nodemon src/server.js",
     "start": "node src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"

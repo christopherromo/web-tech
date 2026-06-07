@@ -9,6 +9,9 @@
 
 import express from "express";
 
-import * as controllers from "../controllers/pokemonControllers.js";
+import * as pokemonControllers from "../controllers/pokemonControllers.js";
 
 export const pokemonRouter = express.Router();
+
+// get routes
+pokemonRouter.get("/", pokemonControllers.getAllPokemon);

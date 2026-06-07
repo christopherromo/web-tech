@@ -8,3 +8,11 @@
  */
 
 import pool from "../db/database.js";
+
+export async function selectAllPokemon() {
+  const result = await pool.query(`
+    SELECT *
+    FROM pokemon
+  `);
+  return result.rows;
+}

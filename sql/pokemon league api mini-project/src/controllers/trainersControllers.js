@@ -7,4 +7,4 @@
  * created: 2026-06-03
  */
 
-import * as models from "../models/trainersModels.js";
+import * as trainersModels from "../models/trainersModels.js";
