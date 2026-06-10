@@ -15,3 +15,9 @@ export const pokemonRouter = express.Router();
 
 // get routes
 pokemonRouter.get("/", pokemonControllers.getAllPokemon);
+pokemonRouter.get(
+  "/with-trainers",
+  pokemonControllers.getAllPokemonWithTrainers,
+);
+pokemonRouter.get("/types", pokemonControllers.getAllPokemonTypes);
+pokemonRouter.get("/:id", pokemonControllers.getPokemonById);

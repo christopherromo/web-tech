@@ -11,6 +11,7 @@ import "dotenv/config";
 import express from "express";
 
 import { pokemonRouter } from "./routes/pokemonRoutes.js";
+import { relationshipsRouter } from "./routes/relationshipsRoute.js";
 import { teamsRouter } from "./routes/teamsRoutes.js";
 import { trainersRouter } from "./routes/trainersRoutes.js";
 
@@ -24,6 +25,7 @@ app.use(express.static("src/public"));
 
 // routes
 app.use("/pokemon", pokemonRouter);
+app.use("/relationships", relationshipsRouter);
 app.use("/teams", teamsRouter);
 app.use("/trainers", trainersRouter);
 

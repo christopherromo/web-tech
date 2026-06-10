@@ -12,3 +12,11 @@ import express from "express";
 import * as trainersControllers from "../controllers/trainersControllers.js";
 
 export const trainersRouter = express.Router();
+
+// get routes
+trainersRouter.get("/", trainersControllers.getAllTrainers);
+trainersRouter.get(
+  "/with-pokemon",
+  trainersControllers.getAllTrainersWithPokemon,
+);
+trainersRouter.get("/:id", trainersControllers.getTrainerById);
