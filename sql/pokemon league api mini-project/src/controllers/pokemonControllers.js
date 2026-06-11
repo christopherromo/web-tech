@@ -68,3 +68,33 @@ export const getAllPokemonTypes = async (req, res) => {
     return res.status(500).json({ message: "could not get types." });
   }
 };
+
+export const getAllPokemonStrongerThanAnyFire = async (req, res) => {
+  try {
+    const pokemon = await pokemonModels.selectAllPokemonStrongerThanAnyFire();
+    return res.json(pokemon);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: "could not get pokemon." });
+  }
+};
+
+export const getAllPokemonStrongerThanAllFire = async (req, res) => {
+  try {
+    const pokemon = await pokemonModels.selectAllPokemonStrongerThanAllFire();
+    return res.json(pokemon);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: "could not get pokemon." });
+  }
+};
+
+export const getAllPokemonRankings = async (req, res) => {
+  try {
+    const pokemon = await pokemonModels.selectAllPokemonRankings();
+    return res.json(pokemon);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: "could not get pokemon." });
+  }
+};

@@ -49,3 +49,46 @@ export async function selectAllPokemonTypes() {
   `);
   return result.rows;
 }
+
+export async function selectAllPokemonStrongerThanAnyFire() {
+  const result = await pool.query(`
+    SELECT *
+    FROM pokemon
+    WHERE level > ANY (
+      SELECT level
+      FROM pokemon
+      WHERE type LIKE '%fire%'
+    )
+  `);
+  return result.rows;
+}
+
+export async function selectAllPokemonStrongerThanAllFire() {
+  const result = await pool.query(`
+    SELECT *
+    FROM pokemon
+    WHERE level > ALL (
+      SELECT level
+      FROM pokemon
+      WHERE type LIKE '%fire%'
+    )
+  `);
+  return result.rows;
+}
+
+export async function selectAllPokemonRankings() {
+  const result = await pool.query(`
+    SELECT 
+      name, 
+      level,
+    CASE 
+      WHEN level IS NULL THEN 'unranked'
+      WHEN level >= 60 THEN 'elite'
+      WHEN level >= 40 THEN 'intermediate'
+      ELSE 'beginner'
+    END AS rank
+    FROM pokemon
+    ORDER BY level DESC
+  `);
+  return result.rows;
+}

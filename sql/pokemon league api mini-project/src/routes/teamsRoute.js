@@ -1,5 +1,5 @@
 /**
- * teamsRoutes.js
+ * teamsRoute.js
  *
  * handles incoming requests to /teams.
  *
@@ -9,9 +9,9 @@
 
 import express from "express";
 
-import * as teamsControllers from "../controllers/teamsControllers.js";
+import * as teamsController from "../controllers/teamsController.js";
 
 export const teamsRouter = express.Router();
 
 // get routes
-teamsRouter.get("/", teamsControllers.getAllTeams);
+teamsRouter.get("/", teamsController.getAllTeams);

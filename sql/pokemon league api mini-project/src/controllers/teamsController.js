@@ -1,5 +1,5 @@
 /**
- * teamsControllers.js
+ * teamsController.js
  *
  * handles the logic for incoming requests to /teams.
  *
@@ -7,11 +7,11 @@
  * created: 2026-06-03
  */
 
-import * as teamsModels from "../models/teamsModels.js";
+import * as teamsModel from "../models/teamsModel.js";
 
 export const getAllTeams = async (req, res) => {
   try {
-    const teams = await teamsModels.selectAllTeams();
+    const teams = await teamsModel.selectAllTeams();
     return res.json(teams);
   } catch (error) {
     console.error(error);

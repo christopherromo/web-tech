@@ -40,3 +40,28 @@ export async function selectAllTrainersWithPokemon() {
   `);
   return result.rows;
 }
+
+export async function selectAllTrainersActive() {
+  const result = await pool.query(`
+    SELECT name
+    FROM trainers t
+    WHERE EXISTS (
+      SELECT 1
+      FROM teams tm
+      WHERE tm.trainer_id = t.id
+    ) ORDER BY name
+  `);
+  return result.rows;
+}
+
+export async function selectAllTrainersInactive() {
+  const result = await pool.query(`
+    SELECT name
+    FROM trainers t
+    LEFT JOIN teams tm
+      ON t.id = tm.trainer_id
+    WHERE tm.pokemon_id IS NULL
+    ORDER BY name
+  `);
+  return result.rows;
+}

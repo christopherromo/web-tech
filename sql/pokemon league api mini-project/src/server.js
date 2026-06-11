@@ -12,7 +12,7 @@ import express from "express";
 
 import { pokemonRouter } from "./routes/pokemonRoutes.js";
 import { relationshipsRouter } from "./routes/relationshipsRoute.js";
-import { teamsRouter } from "./routes/teamsRoutes.js";
+import { teamsRouter } from "./routes/teamsRoute.js";
 import { trainersRouter } from "./routes/trainersRoutes.js";
 
 // set the port and create the express app

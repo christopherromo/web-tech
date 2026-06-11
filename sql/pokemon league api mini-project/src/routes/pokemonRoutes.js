@@ -20,4 +20,13 @@ pokemonRouter.get(
   pokemonControllers.getAllPokemonWithTrainers,
 );
 pokemonRouter.get("/types", pokemonControllers.getAllPokemonTypes);
+pokemonRouter.get(
+  "/stronger-than-any-fire",
+  pokemonControllers.getAllPokemonStrongerThanAnyFire,
+);
+pokemonRouter.get(
+  "/stronger-than-all-fire",
+  pokemonControllers.getAllPokemonStrongerThanAllFire,
+);
+pokemonRouter.get("/rankings", pokemonControllers.getAllPokemonRankings);
 pokemonRouter.get("/:id", pokemonControllers.getPokemonById);

@@ -1,5 +1,5 @@
 /**
- * teamsModels.js
+ * teamsModel.js
  *
  * database query logic for /teams.
  *

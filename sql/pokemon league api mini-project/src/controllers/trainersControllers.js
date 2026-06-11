@@ -58,3 +58,23 @@ export const getAllTrainersWithPokemon = async (req, res) => {
     return res.status(500).json({ message: "could not get trainers." });
   }
 };
+
+export const getAllTrainersActive = async (req, res) => {
+  try {
+    const trainers = await trainersModels.selectAllTrainersActive();
+    return res.json(trainers);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: "could not get trainers." });
+  }
+};
+
+export const getAllTrainersInactive = async (req, res) => {
+  try {
+    const trainers = await trainersModels.selectAllTrainersInactive();
+    return res.json(trainers);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: "could not get trainers." });
+  }
+};
