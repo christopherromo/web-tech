@@ -1,5 +1,5 @@
 /**
- * trainersControllers.js
+ * trainersController.js
  *
  * handles the logic for incoming requests to /trainers.
  *
@@ -7,7 +7,7 @@
  * created: 2026-06-03
  */
 
-import * as trainersModels from "../models/trainersModels.js";
+import * as trainersModel from "../models/trainersModel.js";
 
 // helpers
 
@@ -20,7 +20,7 @@ const isPositiveInteger = (value) => {
 
 export const getAllTrainers = async (req, res) => {
   try {
-    const trainers = await trainersModels.selectAllTrainers();
+    const trainers = await trainersModel.selectAllTrainers();
     return res.json(trainers);
   } catch (error) {
     console.error(error);
@@ -36,7 +36,7 @@ export const getTrainerById = async (req, res) => {
   }
 
   try {
-    const trainer = await trainersModels.selectTrainerById(id);
+    const trainer = await trainersModel.selectTrainerById(id);
 
     if (!trainer) {
       return res.status(404).json({ message: "trainer not found." });
@@ -51,7 +51,7 @@ export const getTrainerById = async (req, res) => {
 
 export const getAllTrainersWithPokemon = async (req, res) => {
   try {
-    const trainers = await trainersModels.selectAllTrainersWithPokemon();
+    const trainers = await trainersModel.selectAllTrainersWithPokemon();
     return res.json(trainers);
   } catch (error) {
     console.error(error);
@@ -61,7 +61,7 @@ export const getAllTrainersWithPokemon = async (req, res) => {
 
 export const getAllTrainersActive = async (req, res) => {
   try {
-    const trainers = await trainersModels.selectAllTrainersActive();
+    const trainers = await trainersModel.selectAllTrainersActive();
     return res.json(trainers);
   } catch (error) {
     console.error(error);
@@ -71,7 +71,27 @@ export const getAllTrainersActive = async (req, res) => {
 
 export const getAllTrainersInactive = async (req, res) => {
   try {
-    const trainers = await trainersModels.selectAllTrainersInactive();
+    const trainers = await trainersModel.selectAllTrainersInactive();
+    return res.json(trainers);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: "could not get trainers." });
+  }
+};
+
+export const getAllTrainersTeamCounts = async (req, res) => {
+  try {
+    const trainers = await trainersModel.selectAllTrainersTeamCounts();
+    return res.json(trainers);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: "could not get trainers." });
+  }
+};
+
+export const getAllTrainersHalfTeams = async (req, res) => {
+  try {
+    const trainers = await trainersModel.selectAllTrainersHalfTeams();
     return res.json(trainers);
   } catch (error) {
     console.error(error);

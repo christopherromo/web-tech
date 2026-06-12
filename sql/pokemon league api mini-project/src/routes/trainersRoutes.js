@@ -9,16 +9,18 @@
 
 import express from "express";
 
-import * as trainersControllers from "../controllers/trainersControllers.js";
+import * as trainersController from "../controllers/trainersController.js";
 
 export const trainersRouter = express.Router();
 
 // get routes
-trainersRouter.get("/", trainersControllers.getAllTrainers);
+trainersRouter.get("/", trainersController.getAllTrainers);
 trainersRouter.get(
   "/with-pokemon",
-  trainersControllers.getAllTrainersWithPokemon,
+  trainersController.getAllTrainersWithPokemon,
 );
-trainersRouter.get("/active", trainersControllers.getAllTrainersActive);
-trainersRouter.get("/inactive", trainersControllers.getAllTrainersInactive);
-trainersRouter.get("/:id", trainersControllers.getTrainerById);
+trainersRouter.get("/active", trainersController.getAllTrainersActive);
+trainersRouter.get("/inactive", trainersController.getAllTrainersInactive);
+trainersRouter.get("/team-counts", trainersController.getAllTrainersTeamCounts);
+trainersRouter.get("/half-teams", trainersController.getAllTrainersHalfTeams);
+trainersRouter.get("/:id", trainersController.getTrainerById);

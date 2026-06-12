@@ -1,5 +1,5 @@
 /**
- * trainersModels.js
+ * trainersModel.js
  *
  * database query logic for /trainers.
  *
@@ -24,7 +24,7 @@ export async function selectTrainerById(id) {
     WHERE id = $1`,
     [id],
   );
-  return result.rows;
+  return result.rows[0];
 }
 
 export async function selectAllTrainersWithPokemon() {
@@ -62,6 +62,39 @@ export async function selectAllTrainersInactive() {
       ON t.id = tm.trainer_id
     WHERE tm.pokemon_id IS NULL
     ORDER BY name
+  `);
+  return result.rows;
+}
+
+export async function selectAllTrainersTeamCounts() {
+  const result = await pool.query(`
+    SELECT
+      t.name,
+      COUNT(tm.trainer_id) AS team_count
+    FROM trainers t
+    LEFT JOIN teams tm
+      ON t.id = tm.trainer_id
+    GROUP BY 
+      t.id, 
+      t.name
+    ORDER BY t.name
+  `);
+  return result.rows;
+}
+
+export async function selectAllTrainersHalfTeams() {
+  const result = await pool.query(`
+    SELECT
+      t.name,
+      COUNT(tm.trainer_id) AS team_count
+    FROM trainers t
+    LEFT JOIN teams tm
+      ON t.id = tm.trainer_id
+    GROUP BY 
+      t.id, 
+      t.name
+    HAVING COUNT(tm.trainer_id) = 3
+    ORDER BY t.name
   `);
   return result.rows;
 }

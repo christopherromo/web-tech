@@ -1,5 +1,5 @@
 /**
- * teamsRoute.js
+ * teamsRoutes.js
  *
  * handles incoming requests to /teams.
  *

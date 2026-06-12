@@ -9,24 +9,36 @@
 
 import express from "express";
 
-import * as pokemonControllers from "../controllers/pokemonControllers.js";
+import * as pokemonController from "../controllers/pokemonController.js";
 
 export const pokemonRouter = express.Router();
 
 // get routes
-pokemonRouter.get("/", pokemonControllers.getAllPokemon);
+pokemonRouter.get("/", pokemonController.getAllPokemon);
 pokemonRouter.get(
   "/with-trainers",
-  pokemonControllers.getAllPokemonWithTrainers,
+  pokemonController.getAllPokemonWithTrainers,
 );
-pokemonRouter.get("/types", pokemonControllers.getAllPokemonTypes);
+pokemonRouter.get("/types", pokemonController.getAllPokemonTypes);
 pokemonRouter.get(
   "/stronger-than-any-fire",
-  pokemonControllers.getAllPokemonStrongerThanAnyFire,
+  pokemonController.getAllPokemonStrongerThanAnyFire,
 );
 pokemonRouter.get(
   "/stronger-than-all-fire",
-  pokemonControllers.getAllPokemonStrongerThanAllFire,
+  pokemonController.getAllPokemonStrongerThanAllFire,
 );
-pokemonRouter.get("/rankings", pokemonControllers.getAllPokemonRankings);
-pokemonRouter.get("/:id", pokemonControllers.getPokemonById);
+pokemonRouter.get("/rankings", pokemonController.getAllPokemonRankings);
+pokemonRouter.get(
+  "/special-filter",
+  pokemonController.getAllPokemonSpecialFilter,
+);
+pokemonRouter.get(
+  "/type-averages",
+  pokemonController.getAllPokemonTypeAverages,
+);
+pokemonRouter.get(
+  "/strongest-per-type",
+  pokemonController.getAllPokemonStrongestPerType,
+);
+pokemonRouter.get("/:id", pokemonController.getPokemonById);

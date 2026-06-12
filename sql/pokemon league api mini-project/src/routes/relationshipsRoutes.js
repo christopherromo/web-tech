@@ -1,5 +1,5 @@
 /**
- * relationshipsRoute.js
+ * relationshipsRoutes.js
  *
  * handles incoming requests to /relationships.
  *

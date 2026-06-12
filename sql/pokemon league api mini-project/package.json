@@ -7,6 +7,11 @@
     "db:schema": "psql pokemon_league -f src/db/schema.sql",
     "db:seed": "psql pokemon_league -f src/db/seed.sql",
     "db:init": "npm run db:schema && npm run db:seed",
+    "db:migration-1": "psql pokemon_league -f src/db/migrations/001_add_hp_column.sql",
+    "db:migration-2": "psql pokemon_league -f src/db/migrations/002_rename_hp_column.sql",
+    "db:migration-3": "psql pokemon_league -f src/db/migrations/003_add_default_hp_value.sql",
+    "db:migration-4": "psql pokemon_league -f src/db/migrations/004_add_hp_constraint.sql",
+    "db:migration-5": "psql pokemon_league -f src/db/migrations/005_remove_hp_column.sql",
     "dev": "nodemon src/server.js",
     "start": "node src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
