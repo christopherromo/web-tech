@@ -1,0 +1,36 @@
+/* relationships styles */
+
+a:active {
+  color: var(--pikachu-text);
+}
+
+a:link {
+  color: var(--pikachu-text);
+}
+
+a:visited {
+  color: var(--pikachu-text);
+}
+
+body {
+  background-color: var(--pikachu-page);
+  color: var(--pikachu-text);
+}
+
+h1 {
+  color: var(--pikachu-secondary);
+}
+
+.backdrop {
+  background-color: var(--pikachu-primary);
+}
+
+.nav {
+  background-color: var(--pikachu-primary);
+}
+
+.nav-underline .nav-link.active,
+.nav-underline .nav-link:hover {
+  color: var(--pikachu-accent);
+  border-bottom-color: var(--pikachu-accent);
+}

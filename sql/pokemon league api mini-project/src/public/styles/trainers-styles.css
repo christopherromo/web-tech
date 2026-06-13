@@ -1,0 +1,23 @@
+/* trainers styles */
+
+body {
+  background-color: var(--charmander-page);
+}
+
+h1 {
+  color: var(--charmander-secondary);
+}
+
+.backdrop {
+  background-color: var(--charmander-primary);
+}
+
+.nav {
+  background-color: var(--charmander-primary);
+}
+
+.nav-underline .nav-link.active,
+.nav-underline .nav-link:hover {
+  color: var(--charmander-accent);
+  border-bottom-color: var(--charmander-accent);
+}

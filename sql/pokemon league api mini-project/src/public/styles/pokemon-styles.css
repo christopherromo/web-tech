@@ -1,0 +1,23 @@
+/* pokemon styles */
+
+body {
+  background-color: var(--bulbasaur-page);
+}
+
+h1 {
+  color: var(--bulbasaur-secondary);
+}
+
+.backdrop {
+  background-color: var(--bulbasaur-primary);
+}
+
+.nav {
+  background-color: var(--bulbasaur-primary);
+}
+
+.nav-underline .nav-link.active,
+.nav-underline .nav-link:hover {
+  color: var(--bulbasaur-accent);
+  border-bottom-color: var(--bulbasaur-accent);
+}

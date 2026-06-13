@@ -1,0 +1,23 @@
+/* teams styles */
+
+body {
+  background-color: var(--squirtle-page);
+}
+
+h1 {
+  color: var(--squirtle-secondary);
+}
+
+.backdrop {
+  background-color: var(--squirtle-primary);
+}
+
+.nav {
+  background-color: var(--squirtle-primary);
+}
+
+.nav-underline .nav-link.active,
+.nav-underline .nav-link:hover {
+  color: var(--squirtle-accent);
+  border-bottom-color: var(--squirtle-accent);
+}
