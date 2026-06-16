@@ -46,7 +46,14 @@
     </ul>
 
     <div class="main-container">
-      <h1>pokemon endpoints</h1>
+      <h1>
+        pokemon endpoints
+        <img
+          alt="pokeball icon"
+          class="icon"
+          src="./images/pokeball-icon.png"
+        />
+      </h1>
       <div class="backdrop endpoints">
         <table>
           <tr>
@@ -66,11 +73,19 @@
             <td><p>all types</p></td>
           </tr>
           <tr>
-            <td><a href="/pokemon/stronger-than-any-fire">/pokemon/stronger-than-any-fire</a></td>
+            <td>
+              <a href="/pokemon/stronger-than-any-fire"
+                >/pokemon/stronger-than-any-fire</a
+              >
+            </td>
             <td><p>all pokemon stronger than any fire type pokemon</p></td>
           </tr>
           <tr>
-            <td><a href="/pokemon/stronger-than-all-fire">/pokemon/stronger-than-all-fire</a></td>
+            <td>
+              <a href="/pokemon/stronger-than-all-fire"
+                >/pokemon/stronger-than-all-fire</a
+              >
+            </td>
             <td><p>all pokemon stronger than all fire type pokemon</p></td>
           </tr>
           <tr>
@@ -78,19 +93,96 @@
             <td><p>all pokemon with generated rankings</p></td>
           </tr>
           <tr>
-            <td><a href="/pokemon/special-filter">/pokemon/special-filter</a></td>
-            <td><p>fire type pokemon above level 50, the rest above level 30.</p></td>
+            <td>
+              <a href="/pokemon/special-filter">/pokemon/special-filter</a>
+            </td>
+            <td>
+              <p>fire type pokemon above level 50, the rest above level 30.</p>
+            </td>
           </tr>
           <tr>
             <td><a href="/pokemon/type-averages">/pokemon/type-averages</a></td>
             <td><p>average level for all types</p></td>
           </tr>
           <tr>
-            <td><a href="/pokemon/strongest-per-type">/pokemon/strongest-per-type</a></td>
+            <td>
+              <a href="/pokemon/strongest-per-type"
+                >/pokemon/strongest-per-type</a
+              >
+            </td>
             <td><p>pokemon with the highest level for each type</p></td>
           </tr>
         </table>
       </div>
+      <h1>
+        add a pokemon
+        <img
+          alt="pokeball icon"
+          class="icon"
+          src="./images/pokeball-icon.png"
+        />
+      </h1>
+      <form class="backdrop form" id="add-pokemon-form">
+        <p>enter all of the following fields:</p>
+        <div class="mb-3">
+          <label for="add-pokemon-name-input" class="form-label">name</label>
+          <input
+            class="form-control"
+            id="add-pokemon-name-input"
+            placeholder="bulbasaur"
+            required
+            type="text"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="add-pokemon-type-input" class="form-label">type</label>
+          <input
+            class="form-control"
+            id="add-pokemon-type-input"
+            placeholder="grass, poison"
+            required
+            type="text"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="add-pokemon-level-input">level</label>
+          <input
+            class="form-control"
+            id="add-pokemon-level-input"
+            max="100"
+            min="1"
+            placeholder="1"
+            required
+            type="number"
+          />
+        </div>
+        <button class="btn form-button" type="submit">add</button>
+      </form>
+      <h1>
+        remove a pokemon
+        <img
+          alt="pokeball icon"
+          class="icon"
+          src="./images/pokeball-icon.png"
+        />
+      </h1>
+      <form class="backdrop form" id="remove-pokemon-form">
+        <p>enter the following field:</p>
+        <div class="mb-3">
+          <label class="form-label" for="remove-pokemon-id-input"
+            >pokemon id</label
+          >
+          <input
+            class="form-control"
+            id="remove-pokemon-id-input"
+            min="1"
+            placeholder="1"
+            required
+            type="number"
+          />
+        </div>
+        <button class="btn form-button" type="submit">remove</button>
+      </form>
     </div>
   </body>
 </html>

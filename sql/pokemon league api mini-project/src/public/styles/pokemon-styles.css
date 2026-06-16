@@ -12,6 +12,10 @@ h1 {
   background-color: var(--bulbasaur-primary);
 }
 
+.form-button {
+  background-color: var(--bulbasaur-accent);
+}
+
 .nav {
   background-color: var(--bulbasaur-primary);
 }

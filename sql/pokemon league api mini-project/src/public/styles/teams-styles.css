@@ -12,6 +12,10 @@ h1 {
   background-color: var(--squirtle-primary);
 }
 
+.form-button {
+  background-color: var(--squirtle-accent);
+}
+
 .nav {
   background-color: var(--squirtle-primary);
 }

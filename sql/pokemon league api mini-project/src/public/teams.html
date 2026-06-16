@@ -46,7 +46,14 @@
     </ul>
 
     <div class="main-container">
-      <h1>teams endpoint</h1>
+      <h1>
+        teams endpoint
+        <img
+          alt="pokeball icon"
+          class="icon"
+          src="./images/pokeball-icon.png"
+        />
+      </h1>
       <div class="backdrop endpoints">
         <table>
           <tr>
@@ -55,6 +62,82 @@
           </tr>
         </table>
       </div>
+      <h1>
+        add a team
+        <img
+          alt="pokeball icon"
+          class="icon"
+          src="./images/pokeball-icon.png"
+        />
+      </h1>
+      <form class="backdrop form" id="add-team-form">
+        <p>enter all of the following fields:</p>
+        <div class="mb-3">
+          <label class="form-label" for="add-team-trainer-id-input"
+            >trainer id</label
+          >
+          <input
+            class="form-control"
+            id="add-team-trainer-id-input"
+            min="1"
+            placeholder="1"
+            required
+            type="number"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="add-team-pokemon-id-input"
+            >pokemon id</label
+          >
+          <input
+            class="form-control"
+            id="add-team-pokemon-id-input"
+            min="1"
+            placeholder="1"
+            required
+            type="number"
+          />
+        </div>
+        <button class="btn form-button" type="submit">add</button>
+      </form>
+      <h1>
+        remove a team
+        <img
+          alt="pokeball icon"
+          class="icon"
+          src="./images/pokeball-icon.png"
+        />
+      </h1>
+      <form class="backdrop form" id="remove-team-form">
+        <p>enter all of the following fields:</p>
+        <div class="mb-3">
+          <label class="form-label" for="remove-team-trainer-id-input"
+            >trainer id</label
+          >
+          <input
+            class="form-control"
+            id="remove-team-trainer-id-input"
+            min="1"
+            placeholder="1"
+            required
+            type="number"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="remove-team-pokemon-id-input"
+            >pokemon id</label
+          >
+          <input
+            class="form-control"
+            id="remove-team-pokemon-id-input"
+            min="1"
+            placeholder="1"
+            required
+            type="number"
+          />
+        </div>
+        <button class="btn form-button" type="submit">remove</button>
+      </form>
     </div>
   </body>
 </html>

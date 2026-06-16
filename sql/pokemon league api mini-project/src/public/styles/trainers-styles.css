@@ -12,6 +12,10 @@ h1 {
   background-color: var(--charmander-primary);
 }
 
+.form-button {
+  background-color: var(--charmander-accent);
+}
+
 .nav {
   background-color: var(--charmander-primary);
 }

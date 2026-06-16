@@ -64,6 +64,28 @@ table {
   margin: 0.7em 0;
 }
 
+.form {
+  padding: 20px;
+  text-align: left;
+}
+
+.form a,
+.form p {
+  display: block;
+  margin: 0.7em 0;
+}
+
+.form-button {
+  color: white;
+  display: block;
+  margin-left: auto;
+  margin-top: 20px;
+}
+
+.icon {
+  image-rendering: pixelated;
+}
+
 .main-container {
   margin-bottom: 30px;
   margin-top: 30px;

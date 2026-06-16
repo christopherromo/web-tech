@@ -46,7 +46,14 @@
     </ul>
 
     <div class="main-container">
-      <h1>trainers endpoints</h1>
+      <h1>
+        trainers endpoints
+        <img
+          alt="pokeball icon"
+          class="icon"
+          src="./images/pokeball-icon.png"
+        />
+      </h1>
       <div class="backdrop endpoints">
         <table>
           <tr>
@@ -79,6 +86,78 @@
           </tr>
         </table>
       </div>
+      <h1>
+        add a trainer
+        <img
+          alt="pokeball icon"
+          class="icon"
+          src="./images/pokeball-icon.png"
+        />
+      </h1>
+      <form class="backdrop form" id="add-trainer-form">
+        <p>enter all of the following fields:</p>
+        <div class="mb-3">
+          <label for="add-trainer-name-input" class="form-label">name</label>
+          <input
+            class="form-control"
+            id="add-trainer-name-input"
+            placeholder="ash"
+            required
+            type="text"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="add-trainer-region-input" class="form-label"
+            >region</label
+          >
+          <input
+            class="form-control"
+            id="add-trainer-region-input"
+            placeholder="kanto"
+            required
+            type="text"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="add-trainer-badges-input"
+            >badges</label
+          >
+          <input
+            class="form-control"
+            id="add-trainer-badges-input"
+            min="0"
+            placeholder="48"
+            required
+            type="number"
+          />
+        </div>
+        <button class="btn form-button" type="submit">add</button>
+      </form>
+      <h1>
+        remove a trainer
+        <img
+          alt="pokeball icon"
+          class="icon"
+          src="./images/pokeball-icon.png"
+        />
+      </h1>
+      <form class="backdrop form" id="remove-trainer-form">
+        <p>enter the following field:</p>
+        <div class="mb-3">
+          <label class="form-label" for="remove-trainer-id-input"
+            >trainer id</label
+          >
+          <input
+            class="form-control"
+            id="remove-trainer-id-input"
+            min="1"
+            placeholder="1"
+            required
+            type="number"
+          />
+        </div>
+        <button class="btn form-button" type="submit">remove</button>
+      </form>
     </div>
   </body>
 </html>
