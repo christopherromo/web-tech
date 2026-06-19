@@ -42,3 +42,9 @@ pokemonRouter.get(
   pokemonController.getAllPokemonStrongestPerType,
 );
 pokemonRouter.get("/:id", pokemonController.getPokemonById);
+
+// post route
+pokemonRouter.post("/", pokemonController.postPokemon);
+
+// delete route
+pokemonRouter.delete("/:id", pokemonController.deletePokemonById);

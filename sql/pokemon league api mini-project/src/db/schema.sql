@@ -31,6 +31,6 @@ CREATE TABLE teams (
     trainer_id INTEGER,
     pokemon_id INTEGER,
     PRIMARY KEY (trainer_id, pokemon_id),
-    FOREIGN KEY (trainer_id) REFERENCES trainers(id),
-    FOREIGN KEY (pokemon_id) REFERENCES pokemon(id)
+    FOREIGN KEY (trainer_id) REFERENCES trainers(id) ON DELETE CASCADE,
+    FOREIGN KEY (pokemon_id) REFERENCES pokemon(id) ON DELETE CASCADE
 );

@@ -24,3 +24,9 @@ trainersRouter.get("/inactive", trainersController.getAllTrainersInactive);
 trainersRouter.get("/team-counts", trainersController.getAllTrainersTeamCounts);
 trainersRouter.get("/half-teams", trainersController.getAllTrainersHalfTeams);
 trainersRouter.get("/:id", trainersController.getTrainerById);
+
+// post route
+trainersRouter.post("/", trainersController.postTrainer);
+
+// delete route
+trainersRouter.delete("/:id", trainersController.deleteTrainerById);

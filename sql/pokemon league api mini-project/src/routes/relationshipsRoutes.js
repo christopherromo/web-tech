@@ -13,5 +13,5 @@ import * as relationshipsController from "../controllers/relationshipsController
 
 export const relationshipsRouter = express.Router();
 
-// get routes
+// get route
 relationshipsRouter.get("/", relationshipsController.getAllRelationships);

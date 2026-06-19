@@ -134,3 +134,27 @@ export async function selectAllPokemonStrongestPerType() {
   `);
   return result.rows;
 }
+
+export async function insertPokemon(pokemon) {
+  const result = await pool.query(
+    `INSERT INTO pokemon (
+      name, 
+      type, 
+      level
+    ) 
+    VALUES ($1, $2, $3)
+    RETURNING *`,
+    [pokemon.name, pokemon.type, pokemon.level],
+  );
+  return result.rows[0];
+}
+
+export async function deletePokemonById(id) {
+  const result = await pool.query(
+    `DELETE FROM pokemon
+    WHERE id = $1
+    RETURNING *`,
+    [id],
+  );
+  return result.rows[0];
+}

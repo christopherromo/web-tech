@@ -98,3 +98,27 @@ export async function selectAllTrainersHalfTeams() {
   `);
   return result.rows;
 }
+
+export async function insertTrainer(trainer) {
+  const result = await pool.query(
+    `INSERT INTO trainers (
+      name, 
+      region, 
+      badges
+    ) 
+    VALUES ($1, $2, $3)
+    RETURNING *`,
+    [trainer.name, trainer.region, trainer.badges],
+  );
+  return result.rows[0];
+}
+
+export async function deleteTrainerById(id) {
+  const result = await pool.query(
+    `DELETE FROM trainers
+    WHERE id = $1
+    RETURNING *`,
+    [id],
+  );
+  return result.rows[0];
+}

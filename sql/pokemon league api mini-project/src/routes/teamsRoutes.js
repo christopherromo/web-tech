@@ -13,5 +13,11 @@ import * as teamsController from "../controllers/teamsController.js";
 
 export const teamsRouter = express.Router();
 
-// get routes
+// get route
 teamsRouter.get("/", teamsController.getAllTeams);
+
+// post route
+teamsRouter.post("/", teamsController.postTeam);
+
+// delete route
+teamsRouter.delete("/:trainerId/:pokemonId", teamsController.deleteTeamByIds);

@@ -22,3 +22,28 @@ export async function selectAllTeams() {
   `);
   return result.rows;
 }
+
+export async function insertTeam(team) {
+  const result = await pool.query(
+    `INSERT INTO teams (
+      trainer_id,
+      pokemon_id
+    ) 
+    VALUES ($1, $2)
+    RETURNING *`,
+    [team.trainerId, team.pokemonId],
+  );
+  return result.rows[0];
+}
+
+export async function deleteTeamByIds(trainerId, pokemonId) {
+  const result = await pool.query(
+    `DELETE FROM teams
+    WHERE 
+      trainer_id = $1 AND
+      pokemon_id = $2
+    RETURNING *`,
+    [trainerId, pokemonId],
+  );
+  return result.rows[0];
+}
