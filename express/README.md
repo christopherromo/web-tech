@@ -6,7 +6,7 @@ These are mini-projects created to help me learn Express.
 
 ### Features 📄
 
-   - **Server.js:** The entry point for the project, where the Express app is created, JSON middleware is enabled, the */orders* router is mounted, and the server is started on port `3000`.
+   - **server.js:** The entry point for the project, where the Express app is created, JSON middleware is enabled, the */orders* router is mounted, and the server is started on port `3000`.
 
    - **Routes:** Defines the API endpoints for order requests. The orders router supports *GET*, *POST*, *PUT*, and *DELETE* requests. It calls functions in `ordersControllers.js` to handle requests.
 
