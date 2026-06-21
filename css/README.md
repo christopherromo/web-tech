@@ -6,7 +6,7 @@ These are mini-projects created to help me learn CSS.
 
 ### Features 📄
 
-   - **CSS Variables:** Used to change UI colors consistently across the project. Three themes exist: *light*, *dark*, and *tropical*. The light theme is the default theme defined in *:root*; the other themes are applied by adding a class to *body*.
+   - **CSS Variables:** Used to change UI colors across the page. Three themes exist: *light*, *dark*, and *tropical*. The light theme is the default theme defined in *:root*; the other themes are applied by adding a class to *body*.
 
    - **Theme Switching:** Users can choose a theme from the dropdown. The dropdown calls a JavaScript function that removes the previous theme class and applies the selected theme to *body*.
 
@@ -17,3 +17,9 @@ These are mini-projects created to help me learn CSS.
 1. Clone the repository.
 
 2. Open `index.html` in a browser.
+
+### Quick Look 📷
+
+<p align="center">
+  <img src="./resources/theme-switcher-mini-project-quick-look.png" alt="theme switcher mini-project quick look"/>
+</p>
