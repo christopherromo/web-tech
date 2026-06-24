@@ -1,0 +1,22 @@
+{
+  "name": "iklafari.mooo.com-refactor-mini-project",
+  "version": "1.0.0",
+  "description": "a refactor of 'project 8 - polling' from 'web-programming-projects' showcasing express-session",
+  "main": "src/server.js",
+  "scripts": {
+    "db:init": "node src/db/schema.js",
+    "start": "node src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "christopher romo",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "better-sqlite3": "^12.11.1",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0"
+  }
+}

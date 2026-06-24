@@ -1,0 +1,39 @@
+/* styles */
+
+body {
+  background-color: lightgreen;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.backdrop {
+  background-color: white;
+  border-color: white;
+  border-style: outset;
+  margin: 10px auto;
+  padding: 10px;
+  text-align: center;
+  width: 80%;
+}
+
+.container {
+  margin-bottom: 50px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.text {
+  color: white;
+}
+
+.top-nav {
+  background-color: white;
+  border-color: white;
+  border-style: outset;
+  margin: 10px auto;
+  padding: 20px;
+  width: 90%;
+}
+
+.top-nav-item {
+  color: black;
+}

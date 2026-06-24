@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <!-- christopher romo, iklafari.mooo.com refactor, 06/23/2026-->
+    <title>christopher's server</title>
+    <meta charset="UTF-8" />
+
+    <!-- styles -->
+    <link href="./styles/styles.css" rel="stylesheet" />
+
+    <!-- javascript -->
+    <script src="./js/index.js" defer></script>
+  </head>
+  <body>
+    <nav class="top-nav">
+      <a class="top-nav-item" href="./register.html">register</a>
+    </nav>
+
+    <div class="container">
+      <h1 class="text">christopher's server</h1>
+      <p class="text">welcome to iklafari.mooo.com</p>
+      <p class="text">(now with polling!)</p>
+    </div>
+
+    <form class="container" id="add-recipient-form">
+      <h2 class="text">join the mailing list:</h2>
+      <label class="text" for="add-recipient-name-input">name:</label>
+      <input id="add-recipient-name-input" type="text" />
+      <p></p>
+      <label class="text" for="add-recipient-email-input">email:</label>
+      <input id="add-recipient-email-input" type="email" />
+      <p></p>
+      <button type="submit">join</button>
+    </form>
+
+    <div class="backdrop container">
+      <h3><u>all recipients</u></h3>
+      <div id="recipients-list"></div>
+    </div>
+
+    <div class="backdrop container">
+      <h2>interact with the API</h2>
+      <p>must be authenticated to add, edit, or remove recipients</p>
+    </div>
+
+    <div class="container">
+      <h2 class="text">christopher romo, CS 3110</h2>
+    </div>
+  </body>
+</html>
