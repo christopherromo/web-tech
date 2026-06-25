@@ -9,6 +9,7 @@
 
 import express from "express";
 
+import { accountsRouter } from "./routes/accountsRoutes.js";
 import { recipientsRouter } from "./routes/recipientsRoutes.js";
 
 // set the port and create the express app
@@ -19,6 +20,7 @@ const app = express();
 app.use(express.json());
 app.use(express.static("src/public"));
 
+app.use("/accounts", accountsRouter);
 app.use("/recipients", recipientsRouter);
 
 // handle 404 errors for undefined routes
