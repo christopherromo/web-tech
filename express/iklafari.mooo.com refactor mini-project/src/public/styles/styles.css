@@ -21,6 +21,11 @@ body {
   text-align: center;
 }
 
+.recipient-item {
+  border: 3px inset white;
+  margin: 15px;
+}
+
 .text {
   color: white;
 }

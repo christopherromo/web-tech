@@ -9,6 +9,8 @@
 
 import express from "express";
 
+import sessionConfig from "./session/session.js";
+
 import { accountsRouter } from "./routes/accountsRoutes.js";
 import { recipientsRouter } from "./routes/recipientsRoutes.js";
 
@@ -19,6 +21,7 @@ const app = express();
 // middleware
 app.use(express.json());
 app.use(express.static("src/public"));
+app.use(sessionConfig);
 
 app.use("/accounts", accountsRouter);
 app.use("/recipients", recipientsRouter);
