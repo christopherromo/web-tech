@@ -7,6 +7,129 @@
  * created: 2026-06-23
  */
 
+async function refreshUserInterface() {
+  const accountLink = document.querySelector("#account-link");
+
+  try {
+    const sessionRes = await fetch("/accounts/session");
+
+    if (sessionRes.ok) {
+      accountLink.textContent = "logout";
+      accountLink.href = "#";
+
+      accountLink.addEventListener("click", async (event) => {
+        event.preventDefault();
+
+        try {
+          const logoutRes = await fetch("/accounts/logout", {
+            method: "POST",
+          });
+
+          const result = await logoutRes.json();
+          alert(result.message);
+
+          if (logoutRes.ok) {
+            window.location.reload();
+          }
+        } catch {
+          alert("network error. please check your connection and try again.");
+        }
+      });
+
+      return;
+    }
+
+    accountLink.textContent = "login";
+    accountLink.href = "/login.html";
+  } catch {
+    alert("network error. please check your connection and try again.");
+  }
+}
+
+async function addRecipient(recipient) {
+  try {
+    const res = await fetch(`/recipients`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(recipient),
+    });
+
+    const result = await res.json();
+    alert(result.message);
+
+    return res.ok;
+  } catch {
+    alert("network error. please check your connection and try again.");
+    return false;
+  }
+}
+
+async function handleAddRecipientFormSubmit(event) {
+  event.preventDefault();
+
+  const addRecipientNameInput = document.querySelector(
+    "#add-recipient-name-input",
+  );
+  const addRecipientEmailInput = document.querySelector(
+    "#add-recipient-email-input",
+  );
+
+  const recipient = {
+    name: addRecipientNameInput.value,
+    email: addRecipientEmailInput.value,
+  };
+
+  const wasAdded = await addRecipient(recipient);
+  if (wasAdded) {
+    event.target.reset();
+    await fillRecipientsList();
+  }
+}
+
+async function editRecipient(id) {
+  const editedRecipientName = prompt("edit recipient's name:");
+  const editedRecipientEmail = prompt("edit recipient's email:");
+
+  const updates = {
+    name: editedRecipientName,
+    email: editedRecipientEmail,
+  };
+
+  try {
+    const res = await fetch(`/recipients/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(updates),
+    });
+
+    const result = await res.json();
+    alert(result.message);
+
+    if (res.ok) {
+      await fillRecipientsList();
+    }
+  } catch {
+    alert("network error. please check your connection and try again.");
+  }
+}
+
+async function removeRecipient(id) {
+  try {
+    const res = await fetch(`/recipients/${id}`, {
+      method: "DELETE",
+    });
+
+    const result = await res.json();
+    alert(result.message);
+
+    if (res.ok) {
+      await fillRecipientsList();
+    }
+  } catch {
+    alert("network error. please check your connection and try again.");
+  }
+}
+
 function buildRecipientItem(recipient) {
   const recipientItem = document.createElement("div");
   recipientItem.classList.add("recipient-item");
@@ -64,95 +187,15 @@ async function fillRecipientsList() {
   }
 }
 
-async function addRecipient(recipient) {
-  try {
-    const res = await fetch(`/recipients`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(recipient),
-    });
-
-    const result = await res.json();
-    alert(result.message);
-
-    return res.ok;
-  } catch {
-    alert("network error. please check your connection and try again.");
-    return false;
-  }
-}
-
-async function editRecipient(id) {
-  const editedRecipientName = prompt("edit recipient's name:");
-  const editedRecipientEmail = prompt("edit recipient's email:");
-
-  const updates = {
-    name: editedRecipientName,
-    email: editedRecipientEmail,
-  };
-
-  try {
-    const res = await fetch(`/recipients/${id}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(updates),
-    });
-
-    const result = await res.json();
-    alert(result.message);
-
-    if (res.ok) {
-      await fillRecipientsList();
-    }
-  } catch {
-    alert("network error. please check your connection and try again.");
-  }
-}
-
-async function removeRecipient(id) {
-  try {
-    const res = await fetch(`/recipients/${id}`, {
-      method: "DELETE",
-    });
-
-    const result = await res.json();
-    alert(result.message);
-
-    if (res.ok) {
-      await fillRecipientsList();
-    }
-  } catch {
-    alert("network error. please check your connection and try again.");
-  }
-}
-
-async function handleAddRecipientFormSubmit(event) {
-  event.preventDefault();
-
-  const addRecipientNameInput = document.querySelector(
-    "#add-recipient-name-input",
-  );
-  const addRecipientEmailInput = document.querySelector(
-    "#add-recipient-email-input",
-  );
-
-  const recipient = {
-    name: addRecipientNameInput.value,
-    email: addRecipientEmailInput.value,
-  };
-
-  const wasAdded = await addRecipient(recipient);
-  if (wasAdded) {
-    event.target.reset();
-    await fillRecipientsList();
-  }
-}
-
 async function main() {
-  // add
+  // refresh ui if logged in
+  await refreshUserInterface();
+
+  // add recipient form
   const addRecipientForm = document.querySelector("#add-recipient-form");
   addRecipientForm.addEventListener("submit", handleAddRecipientFormSubmit);
 
+  // fill recipients list
   await fillRecipientsList();
 }
 

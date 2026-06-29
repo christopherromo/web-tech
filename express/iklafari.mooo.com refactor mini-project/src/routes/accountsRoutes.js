@@ -13,8 +13,11 @@ import * as accountsController from "../controllers/accountsController.js";
 
 export const accountsRouter = express.Router();
 
-// get route
+// get routes
+accountsRouter.get("/session", accountsController.getAccountSession);
 accountsRouter.get("/:username", accountsController.getAccountByUsername);
 
-// post route
+// post routes
 accountsRouter.post("/", accountsController.postAccount);
+accountsRouter.post("/login", accountsController.postAccountLogin);
+accountsRouter.post("/logout", accountsController.postAccountLogout);
