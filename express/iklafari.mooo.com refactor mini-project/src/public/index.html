@@ -10,6 +10,7 @@
     <link href="./styles/styles.css" rel="stylesheet" />
 
     <!-- javascript -->
+    <script src="./js/theme.js" defer></script>
     <script src="./js/index.js" defer></script>
   </head>
   <body>
@@ -18,7 +19,7 @@
     </nav>
 
     <div class="container">
-      <h1 class="text">christopher's server</h1>
+      <h1 class="text" id="server-header">christopher's server</h1>
       <p class="text">welcome to iklafari.mooo.com</p>
       <p class="text">(now with express!)</p>
     </div>
@@ -41,6 +42,10 @@
 
     <div class="backdrop container">
       <h2>interact with the API</h2>
+      <p>to see all recipients: <a href="/recipients">/recipients</a></p>
+      <p>
+        to see a specific recipient: <a href="/recipients/1">/recipients/:id</a>
+      </p>
       <p>must be authenticated to add, edit, or remove recipients</p>
     </div>
 

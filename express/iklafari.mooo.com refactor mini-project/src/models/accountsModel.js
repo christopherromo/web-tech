@@ -7,7 +7,7 @@
  * created: 2026-06-25
  */
 
-import database from "../db/database.js";
+import database from "../database/database.js";
 
 export function selectAccountByUsername(username) {
   const statement = database.prepare(

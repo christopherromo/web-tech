@@ -7,7 +7,7 @@
  * created: 2026-06-23
  */
 
-import database from "../db/database.js";
+import database from "../database/database.js";
 
 export function selectAllRecipients() {
   const statement = database.prepare(`SELECT * FROM recipients`);

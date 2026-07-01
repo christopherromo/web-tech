@@ -26,6 +26,12 @@ body {
   margin: 15px;
 }
 
+#server-header {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
 .text {
   color: white;
 }

@@ -188,6 +188,13 @@ async function fillRecipientsList() {
 }
 
 async function main() {
+  // apply current page color
+  applySavedPageColor();
+
+  // change page color
+  const serverHeader = document.querySelector("#server-header");
+  serverHeader.addEventListener("click", handleServerHeaderClick);
+
   // refresh ui if logged in
   await refreshUserInterface();
 
@@ -197,6 +204,7 @@ async function main() {
 
   // fill recipients list
   await fillRecipientsList();
+  setInterval(fillRecipientsList, 5000);
 }
 
 main();

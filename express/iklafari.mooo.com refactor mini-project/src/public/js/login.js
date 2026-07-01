@@ -48,6 +48,9 @@ async function handleLoginAccountFormSubmit(event) {
 }
 
 async function main() {
+  // apply current page color
+  applySavedPageColor();
+
   // register
   const loginAccountForm = document.querySelector("#login-account-form");
   loginAccountForm.addEventListener("submit", handleLoginAccountFormSubmit);
