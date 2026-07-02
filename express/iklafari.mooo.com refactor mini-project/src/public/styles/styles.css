@@ -26,6 +26,10 @@ body {
   margin: 15px;
 }
 
+.right {
+  text-align: right;
+}
+
 #server-header {
   cursor: pointer;
   user-select: none;
@@ -40,9 +44,16 @@ body {
   background-color: white;
   border-color: white;
   border-style: outset;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   margin: 10px auto;
   padding: 20px;
   width: 90%;
+}
+
+.top-nav a,
+.top-nav p {
+  margin: 0px 0;
 }
 
 .top-nav-item {

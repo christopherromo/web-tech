@@ -9,9 +9,11 @@
 
 async function refreshUserInterface() {
   const accountLink = document.querySelector("#account-link");
+  const helloUserMessage = document.querySelector("#hello-user-message");
 
   try {
     const sessionRes = await fetch("/accounts/session");
+    const sessionResult = await sessionRes.json();
 
     if (sessionRes.ok) {
       accountLink.textContent = "logout";
@@ -25,8 +27,8 @@ async function refreshUserInterface() {
             method: "POST",
           });
 
-          const result = await logoutRes.json();
-          alert(result.message);
+          const logoutResult = await logoutRes.json();
+          alert(logoutResult.message);
 
           if (logoutRes.ok) {
             window.location.reload();
@@ -36,11 +38,15 @@ async function refreshUserInterface() {
         }
       });
 
+      helloUserMessage.textContent = `hello, ${sessionResult.account.username}`;
+
       return;
     }
 
     accountLink.textContent = "login";
     accountLink.href = "/login.html";
+
+    helloUserMessage.textContent = "";
   } catch {
     alert("network error. please check your connection and try again.");
   }
@@ -89,6 +95,16 @@ async function handleAddRecipientFormSubmit(event) {
 async function editRecipient(id) {
   const editedRecipientName = prompt("edit recipient's name:");
   const editedRecipientEmail = prompt("edit recipient's email:");
+
+  const hasEditedName =
+    typeof editedRecipientName === "string" && editedRecipientName.trim();
+  const hasEditedEmail =
+    typeof editedRecipientEmail === "string" && editedRecipientEmail.trim();
+
+  if (!hasEditedName && !hasEditedEmail) {
+    alert("no edits received.");
+    return;
+  }
 
   const updates = {
     name: editedRecipientName,

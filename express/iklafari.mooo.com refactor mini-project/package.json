@@ -4,9 +4,8 @@
   "description": "a refactor of 'project 8 - polling' from 'web-programming-projects' showcasing express-session",
   "main": "src/server.js",
   "scripts": {
-    "db:init": "node src/db/schema.js",
-    "start": "node src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "db:init": "node src/database/schema.js",
+    "start": "node src/server.js"
   },
   "keywords": [],
   "author": "christopher romo",
@@ -17,6 +16,7 @@
     "better-sqlite3": "^12.11.1",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "express-session": "^1.19.0"
+    "express-session": "^1.19.0",
+    "validator": "^13.15.35"
   }
 }

@@ -7,6 +7,8 @@
  * created: 2026-06-23
  */
 
+import validator from "validator";
+
 import * as recipientsModel from "../models/recipientsModel.js";
 
 // helpers
@@ -19,7 +21,7 @@ const isPositiveInteger = (value) => {
 // controllers
 
 export const getAllRecipients = (req, res) => {
-  const recipients = recipientsModel.selectAllRecipients();
+  const recipients = recipientsModel.selectAllRecipients(req.query);
   return res.json(recipients);
 };
 
@@ -48,10 +50,17 @@ export const postRecipient = (req, res) => {
     return res.status(400).json({ message: "email is required." });
   }
 
+  const trimmedName = name.trim();
+  const trimmedEmail = email.trim();
+
+  if (!validator.isEmail(trimmedEmail)) {
+    return res.status(400).json({ message: "invalid email format." });
+  }
+
   try {
     recipientsModel.insertRecipient({
-      name: name.trim(),
-      email: email.trim(),
+      name: trimmedName,
+      email: trimmedEmail,
     });
     return res.status(201).json({ message: "recipient added!" });
   } catch (error) {
@@ -72,6 +81,14 @@ export const putRecipientById = (req, res) => {
 
   if (!recipient) {
     return res.status(404).json({ message: "recipient does not exist." });
+  }
+
+  if (typeof email === "string" && email.trim()) {
+    const trimmedEmail = email.trim();
+
+    if (!validator.isEmail(trimmedEmail)) {
+      return res.status(400).json({ message: "invalid email format." });
+    }
   }
 
   const updates = {

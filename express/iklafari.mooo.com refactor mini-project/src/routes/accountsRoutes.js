@@ -15,7 +15,6 @@ export const accountsRouter = express.Router();
 
 // get routes
 accountsRouter.get("/session", accountsController.getAccountSession);
-accountsRouter.get("/:username", accountsController.getAccountByUsername);
 
 // post routes
 accountsRouter.post("/", accountsController.postAccount);

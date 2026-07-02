@@ -19,24 +19,6 @@ export const getAccountSession = (req, res) => {
   return res.json({ account: req.session.account });
 };
 
-export const getAccountByUsername = (req, res) => {
-  const { username } = req.params;
-
-  if (typeof username !== "string" || !username.trim()) {
-    return res.status(400).json({ message: "username is required." });
-  }
-
-  const account = accountsModel.selectAccountByUsername(username);
-
-  if (!account) {
-    return res.status(404).json({ message: "account does not exist." });
-  }
-  return res.json({
-    id: account.id,
-    username: account.username,
-  });
-};
-
 export const postAccount = async (req, res) => {
   const { username, password } = req.body;
 
@@ -48,7 +30,6 @@ export const postAccount = async (req, res) => {
   }
 
   const trimmedUsername = username.trim();
-  const trimmedPassword = password.trim();
 
   // username and password validation
   if (trimmedUsername.length < 3 || trimmedUsername.length > 30) {
@@ -57,7 +38,7 @@ export const postAccount = async (req, res) => {
       .json({ message: "username must be 3-30 characters long." });
   }
 
-  if (!/^[a-zA-Z0-9_-]{6,30}$/.test(trimmedPassword)) {
+  if (!/^[a-zA-Z0-9_-]{6,30}$/.test(password)) {
     return res.status(400).json({
       message:
         "password must be 6-30 characters long and only contain letters, numbers, _, or -.",
@@ -73,7 +54,7 @@ export const postAccount = async (req, res) => {
   }
 
   try {
-    const hashedPassword = await bcrypt.hash(trimmedPassword, 10);
+    const hashedPassword = await bcrypt.hash(password, 10);
 
     accountsModel.insertAccount({
       username: trimmedUsername,
@@ -97,7 +78,6 @@ export const postAccountLogin = async (req, res) => {
   }
 
   const trimmedUsername = username.trim();
-  const trimmedPassword = password.trim();
 
   // username and password validation
   const account = accountsModel.selectAccountByUsername(trimmedUsername);
@@ -106,22 +86,24 @@ export const postAccountLogin = async (req, res) => {
     return res.status(401).json({ message: "invalid username or password." });
   }
 
-  const passwordMatches = await bcrypt.compare(
-    trimmedPassword,
-    account.password,
-  );
+  const passwordMatches = await bcrypt.compare(password, account.password);
 
   if (!passwordMatches) {
     return res.status(401).json({ message: "invalid username or password." });
   }
 
-  // save session info redirect
-  req.session.account = {
-    id: account.id,
-    username: account.username,
-  };
+  req.session.regenerate((error) => {
+    if (error) {
+      return res.status(500).json({ message: "could not log in." });
+    }
 
-  return res.json({ message: "logged in!" });
+    req.session.account = {
+      id: account.id,
+      username: account.username,
+    };
+
+    return res.json({ message: "logged in!" });
+  });
 };
 
 export const postAccountLogout = (req, res) => {
