@@ -6,11 +6,11 @@ These are mini-projects created to help me learn SQL.
 
 ### Features 📄
 
-   - **better-sqlite3 database:** Uses better-sqlite3 library for a lightweight database. `database.js` creates the database connection, `schema.js` builds the pokedex table, and `seed.js` loads 25 Pokemon.
+   - **better-sqlite3 Database:** Uses better-sqlite3 library for a lightweight database. `database.js` creates the database connection, `schema.js` builds the pokedex table, and `seed.js` loads 25 Pokemon.
 
-   - **Model layer:** Keeps the SQL query logic in one place. Controllers request data from the model, and the model handles the actual *SELECT*, *INSERT*, *UPDATE*, and *DELETE* statements.
+   - **Models:** Keeps the SQL query logic in one place. Controllers request data from the model, and the model handles the actual *SELECT*, *INSERT*, *UPDATE*, and *DELETE* statements.
 
-   - **SQL-focused endpoints:** Includes routes that practice common SQL patterns and operators, such as */fire-or-electric* for *OR*, */level-range* for *BETWEEN*, */sort* for *ORDER BY*, and */stats* for aggregate functions.
+   - **SQL-Focused Endpoints:** Includes routes that practice common SQL patterns and operators, such as */fire-or-electric* for *OR*, */level-range* for *BETWEEN*, */sort* for *ORDER BY*, and */stats* for aggregate functions.
 
 ### Running the Project 🎬
 
@@ -47,13 +47,13 @@ These are mini-projects created to help me learn SQL.
 
 ### Features 📄
 
-   - **PostgreSQL database:** Uses node-postgres library for a more powerful database. `database.js` creates the database connection, `schema.sql` builds the various tables, and `seed.sql` populates the tables.
+   - **PostgreSQL Database:** Uses node-postgres library for a more powerful database. `database.js` creates the database connection, `schema.sql` builds the various tables, and `seed.sql` populates the tables.
 
    - **Migrations:** Migrations were explored, located in the `migrations/` directory. These 5 SQL files utilize the *ALTER TABLE* statement, allowing for the pokemon table to be altered.
 
-   - **Model layer:** Keeps the SQL query logic in one place. Controllers request data from the model, and the model handles the actual *SELECT*, *INSERT*, and *DELETE* statements.
+   - **Models:** Keeps the SQL query logic in one place. Controllers request data from the model, and the model handles the actual *SELECT*, *INSERT*, and *DELETE* statements.
 
-   - **SQL-focused endpoints:** Includes routes that practice more SQL patterns and operators, such as */teams* for *INNER JOIN*, */relationships* for *FULL JOIN*, and */pokemon/types* for *DISTINCT*.
+   - **SQL-Focused Endpoints:** Includes routes that practice more SQL patterns and operators, such as */teams* for *INNER JOIN*, */relationships* for *FULL JOIN*, and */pokemon/types* for *DISTINCT*.
 
 ### Running the Project 🎬
 
