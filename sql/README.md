@@ -18,19 +18,21 @@ These are mini-projects created to help me learn SQL.
 
 2. Ensure Node.js is installed on your computer.
 
-3. Open a terminal in the `pokemon api mini-project/` directory.
+3. Create a `data/` directory in the `pokemon api mini-project/` directory.
 
-4. Install dependencies:
+4. Open a terminal in the `pokemon api mini-project/` directory.
+
+5. Install dependencies:
     ```bash
     npm install
     ```
 
-5. Initialize database:
+6. Initialize database:
     ```bash
     npm run db:init
     ```
 
-6. Run the project:
+7. Run the project:
     ```bash
     npm run start
     ```
@@ -63,8 +65,8 @@ These are mini-projects created to help me learn SQL.
 
 4. Add the following to the `.env` file, with your own configurations.
     ```
-    DB_USER=postgres
-    DB_PASSWORD=password
+    DB_USER=your_db_user_here
+    DB_PASSWORD=your_db_password_here
     DB_HOST=localhost
     DB_PORT=5432
     DB_NAME=pokemon_league
