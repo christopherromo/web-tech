@@ -63,3 +63,51 @@ These are mini-projects created to help me learn Express.
 <p align="center">
   <img src="./resources/cafe-app-mini-project-quick-look.png" alt="cafe app mini-project quick look"/>
 </p>
+
+## iklafari.mooo.com Refactor Mini-Project
+
+### Features 📄
+
+   - **express-session Middleware:** Used to create sessions for logged-in users. When a user logs in, a session is created, allowing for authentication for protected endpoints and site personalization.
+
+   - **Validation & Security:** User input is validated on the back end, ensuring that accounts and recipients meet certain criteria before database insertion. Passwords are hashed using the bcrypt library, sessions are regenerated upon login, and `session.js` contains several configurations that build security.
+
+   - **Refactor & New Features:** This refactor is based off of *project 8 - polling* from *web-programming-projects*. Originally, URL query parameters and partial recipient updates were removed when the database was introduced. Those features have been restored, along with a replacement for basic authentication and a way to cycle through the site's previous page colors.
+
+### Running the Project 🎬
+
+1. Clone the repository.
+
+2. Ensure Node.js is installed on your computer.
+
+3. Create a `data/` directory in the `iklafari.mooo.com refactor mini-project/` directory.
+
+4. Create a `.env` file in the `iklafari.mooo.com refactor mini-project/` directory.
+
+5. Add the following to the `.env` file, with your own configuration.
+    ```
+    SESSION_SECRET=your_session_secret_here
+    ```
+
+6. Open a terminal in the `iklafari.mooo.com refactor mini-project/` directory.
+
+7. Install dependencies:
+    ```bash
+    npm install
+    ```
+
+8. Initialize database:
+    ```bash
+    npm run db:init
+    ```
+
+9. Run the project:
+    ```bash
+    npm run start
+    ```
+
+### Quick Look 📷
+
+<p align="center">
+  <img src="./resources/iklafari.mooo.com-refactor-mini-project-quick-look.png" alt="iklafari.mooo.com refactor mini-project quick look"/>
+</p>
