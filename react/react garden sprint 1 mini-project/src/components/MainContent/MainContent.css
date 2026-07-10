@@ -1,0 +1,24 @@
+/* MainContent styles */
+
+.features-list {
+  margin: 50px auto 30px;
+  width: fit-content;
+}
+
+.main-content-container {
+  /* container */
+  margin: 100px auto;
+  padding: 20px;
+  width: 70%;
+
+  /* font */
+  font-size: larger;
+}
+
+.main-content-container h1 {
+  text-align: center;
+}
+
+.main-content-container li {
+  padding-block: 10px;
+}

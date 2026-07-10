@@ -1,5 +1,33 @@
+/* global styles */
+
 body {
-  background-color: rgb(30, 30, 30);
-  color: white;
-  font-family: "Questrial", sans-serif;
+  /* background */
+  background: #dad7cd;
+  background: linear-gradient(
+    180deg,
+    rgba(218, 215, 205, 1) 0%,
+    rgba(52, 78, 65, 1) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* container */
+  padding: 20px;
+
+  /* font */
+  color: #25382e;
+  font-family: "DM Sans", sans-serif;
+}
+
+html {
+  height: 100%;
+}
+
+.glass-container {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
 }
