@@ -12,7 +12,7 @@ import "./Navbar.css";
 function Navbar() {
   return (
     <header>
-      <nav className="glass-container">
+      <nav className="backdrop">
         <p>react garden</p>
       </nav>
     </header>

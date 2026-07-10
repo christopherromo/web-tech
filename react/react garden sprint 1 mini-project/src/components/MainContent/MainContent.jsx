@@ -11,7 +11,7 @@ import "./MainContent.css";
 
 function MainContent() {
   return (
-    <main className="glass-container main-content-container">
+    <main className="backdrop main-content-container">
       <h1>react garden coming soon!</h1>
       <div className="features-list">
         <p>planned features include:</p>

@@ -1,12 +1,22 @@
+/* variable declarations */
+
+:root {
+  --alpine-forest: rgb(35, 55, 45);
+  --birch-wood: rgb(255, 240, 220);
+  --morning-dew: rgb(235, 235, 225);
+  --oak-bark: rgb(80, 45, 10);
+  --spring-green: rgb(55, 185, 120);
+}
+
 /* global styles */
 
 body {
   /* background */
-  background: #dad7cd;
+  background: var(--morning-dew);
   background: linear-gradient(
     180deg,
-    rgba(218, 215, 205, 1) 0%,
-    rgba(52, 78, 65, 1) 100%
+    var(--morning-dew) 0%,
+    var(--spring-green) 100%
   );
   background-repeat: no-repeat;
   background-size: cover;
@@ -15,7 +25,7 @@ body {
   padding: 20px;
 
   /* font */
-  color: #25382e;
+  color: var(--alpine-forest);
   font-family: "DM Sans", sans-serif;
 }
 
@@ -23,11 +33,12 @@ html {
   height: 100%;
 }
 
-.glass-container {
-  background-color: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+.backdrop {
+  /* container */
+  background-color: var(--birch-wood);
   border-radius: 15px;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
+
+  /* font */
+  color: var(--oak-bark);
 }
