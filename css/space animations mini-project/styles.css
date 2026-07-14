@@ -1,0 +1,215 @@
+/* styles */
+
+body {
+  background-color: black;
+  color: white;
+  font-family: "Stack Sans Headline", sans-serif;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  text-align: center;
+}
+
+h1 {
+  transition: all 0.5s ease-in-out;
+}
+
+h1:hover {
+  color: aqua;
+  font-size: 3rem;
+}
+
+.earth {
+  animation: earth 4s ease-in-out 0s infinite alternate;
+  background: radial-gradient(
+    circle at top left,
+    rgb(31, 190, 36) 0%,
+    rgb(0, 123, 255) 100%
+  );
+  height: 2.5rem;
+  margin: 4rem auto;
+  width: 2.5rem;
+}
+
+@keyframes earth {
+  from {
+    transform: translateX(-12rem);
+  }
+  to {
+    transform: translateX(12rem);
+  }
+}
+
+.jupiter {
+  animation: jupiter 6s ease-in-out 0s infinite alternate;
+  background: radial-gradient(
+    circle at 25% 75%,
+    rgb(196, 123, 67) 0%,
+    rgb(214, 205, 193) 100%
+  );
+  height: 8rem;
+  margin: 4rem auto;
+  width: 8rem;
+}
+
+@keyframes jupiter {
+  from {
+    transform: translateX(-16rem);
+  }
+  to {
+    transform: translateX(16rem);
+  }
+}
+
+.mars {
+  animation: mars 5s ease-in-out 0s infinite alternate;
+  background: radial-gradient(
+    circle at top right,
+    rgb(42, 42, 42) 0%,
+    rgb(237, 86, 60) 100%
+  );
+  height: 1.5rem;
+  margin: 4rem auto;
+  width: 1.5rem;
+}
+
+@keyframes mars {
+  from {
+    transform: translateX(-14rem);
+  }
+  to {
+    transform: translateX(14rem);
+  }
+}
+
+.mercury {
+  animation: mercury 2s ease-in-out 0s infinite alternate;
+  background: linear-gradient(
+    0deg,
+    rgb(65, 65, 65) 0%,
+    rgb(154, 154, 154) 100%
+  );
+  height: 1rem;
+  margin: 4rem auto;
+  width: 1rem;
+}
+
+@keyframes mercury {
+  from {
+    transform: translateX(-8rem);
+  }
+  to {
+    transform: translateX(8rem);
+  }
+}
+
+.neptune {
+  animation: neptune 9s ease-in-out 0s infinite alternate;
+  background: radial-gradient(
+    circle at 75% 75%,
+    rgb(29, 41, 119) 0%,
+    rgb(81, 114, 244) 100%
+  );
+  height: 5.5rem;
+  margin: 4rem auto;
+  width: 5.5rem;
+}
+
+@keyframes neptune {
+  from {
+    transform: translateX(-22rem);
+  }
+  to {
+    transform: translateX(22rem);
+  }
+}
+
+.saturn {
+  animation: saturn 7s ease-in-out 0s infinite alternate;
+  background: linear-gradient(
+    0deg,
+    rgb(142, 136, 108) 0%,
+    rgb(202, 187, 140) 100%
+  );
+  height: 7rem;
+  margin: 4rem auto;
+  width: 7rem;
+}
+
+@keyframes saturn {
+  from {
+    transform: translateX(-18rem);
+  }
+  to {
+    transform: translateX(18rem);
+  }
+}
+
+.sun {
+  background: radial-gradient(
+    circle at center,
+    rgb(255, 173, 32) 0%,
+    rgb(255, 106, 42) 100%
+  );
+  box-shadow: 0 0 5rem 1rem rgba(235, 110, 5, 0.3);
+  height: 10rem;
+  margin: 4rem auto;
+  transition: all 1s ease-in;
+  width: 10rem;
+}
+
+.sun:hover {
+  background: radial-gradient(
+    circle at center,
+    rgb(255, 120, 42) 0%,
+    rgb(255, 0, 0) 100%
+  );
+  height: 15rem;
+  margin: 4rem auto;
+  width: 15rem;
+}
+
+.stellar-object {
+  border-radius: 50%;
+}
+
+.uranus {
+  animation: uranus 8s ease-in-out 0s infinite alternate;
+  background: linear-gradient(
+    90deg,
+    rgb(52, 119, 144) 0%,
+    rgb(231, 242, 240) 100%
+  );
+  height: 6rem;
+  margin: 4rem auto;
+  width: 6rem;
+}
+
+@keyframes uranus {
+  from {
+    transform: translateX(-20rem);
+  }
+  to {
+    transform: translateX(20rem);
+  }
+}
+
+.venus {
+  animation: venus 3s ease-in-out 0s infinite alternate;
+  background: linear-gradient(
+    0deg,
+    rgb(255, 229, 169) 0%,
+    rgb(255, 244, 229) 100%
+  );
+  height: 2rem;
+  margin: 4rem auto;
+  width: 2rem;
+}
+
+@keyframes venus {
+  from {
+    transform: translateX(-10rem);
+  }
+  to {
+    transform: translateX(10rem);
+  }
+}
