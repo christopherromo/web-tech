@@ -1,0 +1,10 @@
+/* Catalog styles*/
+
+.catalog {
+  display: grid;
+}
+
+.catalog-container {
+  margin: 6rem auto;
+  text-align: center;
+}
