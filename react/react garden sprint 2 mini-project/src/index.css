@@ -11,20 +11,20 @@
 /* global styles */
 
 body {
-  /* background */
+  /* box model */
+  padding: 20px;
+
+  /* font */
+  font-family: "DM Sans", sans-serif;
+
+  /* visuals */
   background: var(--morning-dew);
   background: linear-gradient(
     180deg,
     var(--morning-dew) 0%,
     var(--spring-green) 100%
   );
-
-  /* container */
-  padding: 20px;
-
-  /* font */
   color: var(--alpine-forest);
-  font-family: "DM Sans", sans-serif;
 }
 
 html {
@@ -32,11 +32,11 @@ html {
 }
 
 .backdrop {
-  /* container */
-  background-color: var(--birch-wood);
+  /* box model */
   border-radius: 1em;
-  box-shadow: 0 0.5em 2em 0 rgba(0, 0, 0, 0.15);
 
-  /* font */
+  /* visuals */
+  background-color: var(--birch-wood);
+  box-shadow: 0 0.5em 2em 0 rgba(0, 0, 0, 0.15);
   color: var(--oak-bark);
 }

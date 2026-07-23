@@ -11,7 +11,7 @@ import "./Footer.css";
 
 function Footer() {
   return (
-    <footer>
+    <footer className="footer">
       <p>
         <small>christopher romo, web-tech</small>
       </p>

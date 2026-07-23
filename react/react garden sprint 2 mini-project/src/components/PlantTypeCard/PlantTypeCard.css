@@ -1,14 +1,21 @@
 /* PlantTypeCard styles*/
 
 .plant-type-card {
+  /* box model */
   align-items: center;
   display: grid;
   flex: none;
-  font-size: small;
-  grid-template-rows: 12rem 3rem 3rem 1fr;
+  grid-template-rows: 12rem 3rem 3.5rem 1fr;
   height: 23rem;
   padding: 1rem;
   width: 12rem;
+
+  /* font */
+  font-size: small;
+}
+
+.plant-type-name {
+  font-size: medium;
 }
 
 .image-test {

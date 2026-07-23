@@ -28,12 +28,12 @@ function PlantTypeCatalog() {
   });
 
   return (
-    <main className="catalog-container">
+    <main className="plant-type-catalog">
       <Header
         title="welcome to React Garden"
         description="explore the plants available for your future garden"
       />
-      <div className="catalog">{plantTypesJSX}</div>
+      <div className="card-area">{plantTypesJSX}</div>
     </main>
   );
 }

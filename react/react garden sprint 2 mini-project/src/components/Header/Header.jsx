@@ -10,10 +10,12 @@
 import "./Header.css";
 
 function Header(props) {
+  const { description, title } = props;
+
   return (
     <div className="header">
-      <h1>{props.title}</h1>
-      <p>{props.description}</p>
+      <h1>{title}</h1>
+      <p>{description}</p>
     </div>
   );
 }
