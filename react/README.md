@@ -6,9 +6,9 @@ These are mini-projects created to help me learn React.
 
 ### Features 📄
 
-   - **React Static Page:** Created using React components. The page (app) consists of three components: the navbar, the main content, and the footer. This mini-project was made to help introduce me to React.
+- **React Static Page:** Created using React components. The page (app) consists of three components: the navbar, the main content, and the footer. This mini-project was made to help introduce me to React.
 
-   - **Vite Scaffold:** Used to setup the mini-project. This allowed me to learn the typical project structure and have access to developer tools. This was important to learn for setting up future projects.
+- **Vite Scaffold:** Used to setup the mini-project. This allowed me to learn the typical project structure and have access to developer tools. This was important to learn for setting up future projects.
 
 ### Running the Project 🎬
 
@@ -19,14 +19,15 @@ These are mini-projects created to help me learn React.
 3. Open a terminal in the `react garden sprint 1 mini-project/` directory.
 
 4. Install dependencies:
-    ```bash
-    npm install
-    ```
+
+   ```bash
+   npm install
+   ```
 
 5. Run the project:
-    ```bash
-    npm run dev
-    ```
+   ```bash
+   npm run dev
+   ```
 
 ### Quick Look 📷
 

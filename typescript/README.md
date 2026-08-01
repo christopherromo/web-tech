@@ -6,15 +6,15 @@ These are mini-projects created to help me learn TypeScript.
 
 ### Features 📄
 
-   - **Basic Types:** Types like *number* and *string*, showcased with variables like *id* and *title*, respectively.
+- **Basic Types:** Types like _number_ and _string_, showcased with variables like _id_ and _title_, respectively.
 
-   - **Literal Types:** Types restricted to specific values, such as certain *number* or *string* values. Showcased with *Priority* and *Status*.
+- **Literal Types:** Types restricted to specific values, such as certain _number_ or _string_ values. Showcased with _Priority_ and _Status_.
 
-   - **Custom Types:** A shape for data, as it defines properties an object must have to be considered that type. Showcased with the *Task* type, with properties like *id: number*, *title: string*, etc.
+- **Custom Types:** A shape for data, as it defines properties an object must have to be considered that type. Showcased with the _Task_ type, with properties like _id: number_, _title: string_, etc.
 
-   - **Optional Properties:** Properties for a custom type can be made optional by using "?", as shown with *description?: string*.
+- **Optional Properties:** Properties for a custom type can be made optional by using "?", as shown with _description?: string_.
 
-   - **Unions:** Allow multiple types as an acceptable value by using " | ". The *Priority* and *Status* types are unions of string literals.
+- **Unions:** Allow multiple types as an acceptable value by using " | ". The _Priority_ and _Status_ types are unions of string literals.
 
 ### Running the Project 🎬
 
@@ -25,28 +25,29 @@ These are mini-projects created to help me learn TypeScript.
 3. Open a terminal in the `task manager mini-project/` directory.
 
 4. Install dependencies:
-    ```bash
-    npm install
-    ```
+
+   ```bash
+   npm install
+   ```
 
 5. Run the project:
-    ```bash
-    npm run dev
-    ```
+   ```bash
+   npm run dev
+   ```
 
 ## Inventory Manager Mini-Project
 
 ### Features 📄
 
-   - **Type Narrowing:** The process of finding a variable's type. This can be seen with the *getItem* function, where the incoming *ItemIdentifier*'s specific type is found before the logic.
+- **Type Narrowing:** The process of finding a variable's type. This can be seen with the _getItem_ function, where the incoming _ItemIdentifier_'s specific type is found before the logic.
 
-   - **Extract Utility Type:** Finds members of a union that match a certain criterion. For example, the *updateItem* function expects a category argument, which it uses with the extract utility type to extract members of the InventoryItem union whose categories match.
+- **Extract Utility Type:** Finds members of a union that match a certain criterion. For example, the _updateItem_ function expects a category argument, which it uses with the extract utility type to extract members of the InventoryItem union whose categories match.
 
-   - **Omit Utility Type:** Ensures certain properties of a type are left out. For example, the *updateItem* function finds the expected type of the incoming object through use of the extract utility type. That type is then used with the omit utility type to ensure the *id* and *category* properties are absent from the incoming object.
+- **Omit Utility Type:** Ensures certain properties of a type are left out. For example, the _updateItem_ function finds the expected type of the incoming object through use of the extract utility type. That type is then used with the omit utility type to ensure the _id_ and _category_ properties are absent from the incoming object.
 
-   - **Partial Utility Type:** Allows all properties to be optional. For example, after *id* and *category* properties are ensured absent, the rest of the remaining properties are made optional.
+- **Partial Utility Type:** Allows all properties to be optional. For example, after _id_ and _category_ properties are ensured absent, the rest of the remaining properties are made optional.
 
-   - **Generics:** Allow functions to work with flexible, reusable types while keeping type safety. For example, the *addItem* and *findItems* functions use generics with *InventoryItem* types.
+- **Generics:** Allow functions to work with flexible, reusable types while keeping type safety. For example, the _addItem_ and _findItems_ functions use generics with _InventoryItem_ types.
 
 ### Running the Project 🎬
 
@@ -57,11 +58,12 @@ These are mini-projects created to help me learn TypeScript.
 3. Open a terminal in the `inventory manager mini-project/` directory.
 
 4. Install dependencies:
-    ```bash
-    npm install
-    ```
+
+   ```bash
+   npm install
+   ```
 
 5. Run the project:
-    ```bash
-    npm run dev
-    ```
+   ```bash
+   npm run dev
+   ```

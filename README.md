@@ -8,13 +8,13 @@ This is a collection of mini-projects made to help me understand various web tec
 
 ## Technologies 💻
 
-   - React
-   - TypeScript
-   - JavaScript
-   - HTML
-   - CSS
-   - Bootstrap
-   - Node.js
-   - Express
-   - PostgreSQL
-   - SQLite
+- React
+- TypeScript
+- JavaScript
+- HTML
+- CSS
+- Bootstrap
+- Node.js
+- Express
+- PostgreSQL
+- SQLite

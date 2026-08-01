@@ -6,11 +6,11 @@ These are mini-projects created to help me learn Express.
 
 ### Features 📄
 
-   - **server.js:** The entry point for the project, where the Express app is created, JSON middleware is enabled, the */orders* router is mounted, and the server is started on port `3000`.
+- **server.js:** The entry point for the project, where the Express app is created, JSON middleware is enabled, the _/orders_ router is mounted, and the server is started on port `3000`.
 
-   - **Routes:** Defines the API endpoints for order requests. The orders router supports *GET*, *POST*, *PUT*, and *DELETE* requests. It calls functions in `ordersControllers.js` to handle requests.
+- **Routes:** Defines the API endpoints for order requests. The orders router supports _GET_, _POST_, _PUT_, and _DELETE_ requests. It calls functions in `ordersControllers.js` to handle requests.
 
-   - **Controllers:** Defines functions that handle the request logic for getting all orders, finding an order by ID, creating a new order, updating an existing order, and deleting an order.
+- **Controllers:** Defines functions that handle the request logic for getting all orders, finding an order by ID, creating a new order, updating an existing order, and deleting an order.
 
 ### Running the Project 🎬
 
@@ -21,24 +21,25 @@ These are mini-projects created to help me learn Express.
 3. Open a terminal in the `cafe api mini-project/` directory.
 
 4. Install dependencies:
-    ```bash
-    npm install
-    ```
+
+   ```bash
+   npm install
+   ```
 
 5. Run the project:
-    ```bash
-    npm run start
-    ```
+   ```bash
+   npm run start
+   ```
 
 ## Cafe App Mini-Project
 
 ### Features 📄
 
-   - **Static Files:** Located in the `public/` directory, these files are now served via Express. A webpage now greets the user, and API requests can be made using the various UI components.
+- **Static Files:** Located in the `public/` directory, these files are now served via Express. A webpage now greets the user, and API requests can be made using the various UI components.
 
-   - **Imported Font:** The font for the webpage has been imported from Google Fonts, with links located in the *head* tag in `index.html` and the font itself declared in `styles.css`.
+- **Imported Font:** The font for the webpage has been imported from Google Fonts, with links located in the _head_ tag in `index.html` and the font itself declared in `styles.css`.
 
-   - **Bootstrap:** Added to the project via `index.html` (stylesheet link and JavaScript link in *head* tag), various Bootstrap UI components are used on the webpage. This includes form controls and dropdowns.
+- **Bootstrap:** Added to the project via `index.html` (stylesheet link and JavaScript link in _head_ tag), various Bootstrap UI components are used on the webpage. This includes form controls and dropdowns.
 
 ### Running the Project 🎬
 
@@ -49,14 +50,15 @@ These are mini-projects created to help me learn Express.
 3. Open a terminal in the `cafe app mini-project/` directory.
 
 4. Install dependencies:
-    ```bash
-    npm install
-    ```
+
+   ```bash
+   npm install
+   ```
 
 5. Run the project:
-    ```bash
-    npm run start
-    ```
+   ```bash
+   npm run start
+   ```
 
 ### Quick Look 📷
 
@@ -68,11 +70,11 @@ These are mini-projects created to help me learn Express.
 
 ### Features 📄
 
-   - **express-session Middleware:** Used to create sessions for logged-in users. When a user logs in, a session is created, allowing for authentication for protected endpoints and site personalization.
+- **express-session Middleware:** Used to create sessions for logged-in users. When a user logs in, a session is created, allowing for authentication for protected endpoints and site personalization.
 
-   - **Validation & Security:** User input is validated on the back end, ensuring that accounts and recipients meet certain criteria before database insertion. Passwords are hashed using the bcrypt library, sessions are regenerated upon login, and `session.js` contains several configurations that build security.
+- **Validation & Security:** User input is validated on the back end, ensuring that accounts and recipients meet certain criteria before database insertion. Passwords are hashed using the bcrypt library, sessions are regenerated upon login, and `session.js` contains several configurations that build security.
 
-   - **Refactor & New Features:** This refactor is based off of *project 8 - polling* from *web-programming-projects*. Originally, URL query parameters and partial recipient updates were removed when the database was introduced. Those features have been restored, along with a replacement for basic authentication and a way to cycle through the site's previous page colors.
+- **Refactor & New Features:** This refactor is based off of _project 8 - polling_ from _web-programming-projects_. Originally, URL query parameters and partial recipient updates were removed when the database was introduced. Those features have been restored, along with a replacement for basic authentication and a way to cycle through the site's previous page colors.
 
 ### Running the Project 🎬
 
@@ -85,26 +87,29 @@ These are mini-projects created to help me learn Express.
 4. Create a `.env` file in the `iklafari.mooo.com refactor mini-project/` directory.
 
 5. Add the following to the `.env` file, with your own configuration.
-    ```
-    SESSION_SECRET=your_session_secret_here
-    ```
+
+   ```
+   SESSION_SECRET=your_session_secret_here
+   ```
 
 6. Open a terminal in the `iklafari.mooo.com refactor mini-project/` directory.
 
 7. Install dependencies:
-    ```bash
-    npm install
-    ```
+
+   ```bash
+   npm install
+   ```
 
 8. Initialize database:
-    ```bash
-    npm run db:init
-    ```
+
+   ```bash
+   npm run db:init
+   ```
 
 9. Run the project:
-    ```bash
-    npm run start
-    ```
+   ```bash
+   npm run start
+   ```
 
 ### Quick Look 📷
 
