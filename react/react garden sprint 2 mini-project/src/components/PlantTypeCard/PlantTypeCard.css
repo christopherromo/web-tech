@@ -14,14 +14,13 @@
   font-size: small;
 }
 
-.plant-type-name {
-  font-size: medium;
-}
-
-.image-test {
-  border-radius: 1em;
-  border-style: dashed;
+.plant-type-image {
   height: 10rem;
+  image-rendering: pixelated;
   margin: auto;
   width: 10rem;
+}
+
+.plant-type-name {
+  font-size: medium;
 }

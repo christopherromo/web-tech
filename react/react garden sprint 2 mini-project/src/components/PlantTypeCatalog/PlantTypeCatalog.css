@@ -5,6 +5,7 @@
   gap: 1rem;
   overflow-x: auto;
   padding: 1rem;
+  padding-bottom: 2rem;
 }
 
 .plant-type-catalog {

@@ -19,6 +19,7 @@ function PlantTypeCatalog() {
     return (
       <PlantTypeCard
         key={plantType.id}
+        image={plantType.image}
         name={plantType.name}
         icon={plantType.icon}
         description={plantType.description}

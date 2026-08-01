@@ -10,11 +10,11 @@
 import "./PlantTypeCard.css";
 
 function PlantTypeCard(props) {
-  const { description, examples, icon, name } = props;
+  const { description, examples, icon, image, name } = props;
 
   return (
     <div className="backdrop plant-type-card">
-      <div className="image-test"></div>
+      <img alt={name} className="plant-type-image" src={image} />
       <p className="plant-type-name">
         <b>
           {name} {icon}
