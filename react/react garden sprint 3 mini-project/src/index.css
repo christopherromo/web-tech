@@ -1,0 +1,42 @@
+/* variable declarations */
+
+:root {
+  --alpine-forest: rgb(35, 55, 45);
+  --birch-wood: rgb(255, 240, 220);
+  --morning-dew: rgb(235, 235, 225);
+  --oak-bark: rgb(80, 45, 10);
+  --spring-green: rgb(55, 185, 120);
+}
+
+/* global styles */
+
+body {
+  /* box model */
+  padding: 20px;
+
+  /* font */
+  font-family: "DM Sans", sans-serif;
+
+  /* visuals */
+  background: var(--morning-dew);
+  background: linear-gradient(
+    180deg,
+    var(--morning-dew) 0%,
+    var(--spring-green) 100%
+  );
+  color: var(--alpine-forest);
+}
+
+html {
+  height: 100%;
+}
+
+.backdrop {
+  /* box model */
+  border-radius: 1em;
+
+  /* visuals */
+  background-color: var(--birch-wood);
+  box-shadow: 0 0.5em 2em 0 rgba(0, 0, 0, 0.15);
+  color: var(--oak-bark);
+}

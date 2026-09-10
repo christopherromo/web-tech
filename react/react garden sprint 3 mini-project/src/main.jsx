@@ -1,0 +1,21 @@
+/**
+ * main.jsx
+ *
+ * renders the application in the root element.
+ *
+ * author: christopher romo
+ * created: 2026-09-10
+ */
+
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+
+import "./index.css";
+
+import App from "./App.jsx";
+
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+);
