@@ -10,13 +10,13 @@
 import "./MyGarden.css";
 
 import Header from "../Header/Header.jsx";
-import GardenGrid from "../GardenGrid/GardenGrid.jsx";
+import MyGardenGrid from "../MyGardenGrid/MyGardenGrid.jsx";
 
 function MyGarden() {
   return (
     <main className="my-garden">
       <Header title="My Garden" description="interact with your garden!" />
-      <GardenGrid />
+      <MyGardenGrid />
     </main>
   );
 }

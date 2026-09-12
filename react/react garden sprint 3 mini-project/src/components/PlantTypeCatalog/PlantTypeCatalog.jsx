@@ -10,14 +10,14 @@
 import "./PlantTypeCatalog.css";
 
 import Header from "../Header/Header.jsx";
-import PlantTypeCard from "../PlantTypeCard/PlantTypeCard.jsx";
+import PlantTypeCatalogCard from "../PlantTypeCatalogCard/PlantTypeCatalogCard.jsx";
 
 import { plantTypes } from "../../data/plantTypes.js";
 
 function PlantTypeCatalog() {
-  const plantTypesJSX = plantTypes.map((plantType) => {
+  const plantTypeCatalogCardsJSX = plantTypes.map((plantType) => {
     return (
-      <PlantTypeCard
+      <PlantTypeCatalogCard
         key={plantType.id}
         icon={plantType.icon}
         name={plantType.name}
@@ -34,7 +34,7 @@ function PlantTypeCatalog() {
         title="welcome to React Garden"
         description="explore the plants available for your future garden"
       />
-      <div className="card-area">{plantTypesJSX}</div>
+      <div className="card-area">{plantTypeCatalogCardsJSX}</div>
     </main>
   );
 }

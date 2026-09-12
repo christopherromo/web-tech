@@ -1,0 +1,29 @@
+/* MyGardenGrid styles*/
+
+.garden-container {
+  align-items: center;
+  display: flex;
+  height: 30rem;
+  justify-content: center;
+  margin: auto;
+  width: 30rem;
+}
+
+.garden-grass {
+  align-items: center;
+  display: flex;
+  height: 27.5rem;
+  justify-content: center;
+  width: 27.5rem;
+
+  background-color: rgb(43, 141, 26);
+}
+
+.garden-tile-grid {
+  display: grid;
+  gap: 0.2em;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  height: 25rem;
+  width: 25rem;
+}

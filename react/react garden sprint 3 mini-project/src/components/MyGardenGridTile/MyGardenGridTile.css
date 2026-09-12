@@ -1,0 +1,16 @@
+/* MyGardenGridTile styles*/
+
+.my-garden-grid-tile {
+  align-items: center;
+  border-color: rgba(255, 255, 255, 0.2);
+  border-style: dotted;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+.tile-icon {
+  height: 100%;
+  image-rendering: pixelated;
+  width: 100%;
+}

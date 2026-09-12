@@ -1,6 +1,17 @@
-/* PlantTypeCard styles*/
+/* PlantTypeCatalogCard styles*/
 
-.plant-type-card {
+.card-icon {
+  height: 10rem;
+  image-rendering: pixelated;
+  margin: auto;
+  width: 10rem;
+}
+
+.card-name {
+  font-size: medium;
+}
+
+.plant-type-catalog-card {
   /* box model */
   align-items: center;
   display: grid;
@@ -12,15 +23,4 @@
 
   /* font */
   font-size: small;
-}
-
-.plant-type-icon {
-  height: 10rem;
-  image-rendering: pixelated;
-  margin: auto;
-  width: 10rem;
-}
-
-.plant-type-name {
-  font-size: medium;
 }

@@ -1,5 +1,5 @@
 /**
- * myGarden.js
+ * myGardenPlants.js
  *
  * contains an array of plants currently in MyGarden.
  *
@@ -7,10 +7,13 @@
  * created: 2026-09-10
  */
 
-export const myGarden = [
+export const myGardenPlants = [
   {
     id: 1,
-    plant: null,
+    plant: {
+      name: "rose",
+      typeId: 1,
+    },
   },
   {
     id: 2,
