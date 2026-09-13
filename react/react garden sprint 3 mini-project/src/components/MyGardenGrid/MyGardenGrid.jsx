@@ -38,7 +38,7 @@ function MyGardenGrid() {
     <div className="backdrop garden-container">
       {selectedTile ? (
         <MyGardenModal
-          plantTile={selectedTile}
+          plant={selectedTile.plant}
           handleCloseButtonClick={() => setSelectedTile(null)}
         />
       ) : null}

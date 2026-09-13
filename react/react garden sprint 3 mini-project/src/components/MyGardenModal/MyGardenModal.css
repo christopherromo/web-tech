@@ -1,5 +1,49 @@
 /* MyGardenModal styles*/
 
+.info-button {
+  background-color: var(--oak-bark);
+  border-radius: 0.7em;
+  border-style: none;
+  color: white;
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1em;
+}
+
+.info-buttons {
+  display: grid;
+  gap: 0.7em;
+  grid-template-rows: 1fr 1fr 1fr;
+  margin: 1em;
+}
+
+.info-header {
+  margin: auto;
+}
+
+.info-icon {
+  height: 70%;
+  image-rendering: pixelated;
+  width: 70%;
+}
+
+.info-icon-backdrop {
+  align-items: center;
+  background-color: rgb(240, 212, 177);
+  border-radius: 1em;
+  display: flex;
+  justify-content: center;
+  margin: 1em;
+}
+
+.info-modal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 100%;
+  width: 100%;
+}
+
 .my-garden-modal {
   border: none;
   height: 20rem;

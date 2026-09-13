@@ -12,6 +12,7 @@ export const myGardenPlants = [
     id: 1,
     plant: {
       name: "rose",
+      notes: "pet safe, water once a week.",
       typeId: 1,
     },
   },
